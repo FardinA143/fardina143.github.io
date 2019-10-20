@@ -60,12 +60,12 @@ Un <question-record><question></question><answer><text>talla-rajoles</text><feed
 <keypad-characters></keypad-characters>
 <next-ex-caption>&amp;#x003E;&amp;#x003E;</next-ex-caption>
 <back-caption>&amp;#x003C;&amp;#x003C;</back-caption>
-<contents-caption>&amp;#x00CD;ndex</contents-caption>
+<contents-caption>V&amp;#x00E9;s als continguts</contents-caption>
 <include-next-ex>0</include-next-ex>
-<include-contents>0</include-contents>
+<include-contents>1</include-contents>
 <include-back>0</include-back>
-<contents-url></contents-url>
-<contents-url></contents-url>
+<contents-url>fardina143.github.io</contents-url>
+<contents-url>fardina143.github.io</contents-url>
 <graphic-url></graphic-url>
 <font-face>Segoe, Arial</font-face>
 <font-size>medium</font-size>
