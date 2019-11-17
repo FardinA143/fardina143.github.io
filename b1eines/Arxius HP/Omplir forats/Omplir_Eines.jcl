@@ -64,8 +64,8 @@ Un <question-record><question></question><answer><text>talla-rajoles</text><feed
 <include-next-ex>0</include-next-ex>
 <include-contents>1</include-contents>
 <include-back>0</include-back>
-<contents-url>https://fardina143.github.io</contents-url>
-<contents-url>https://fardina143.github.io</contents-url>
+<contents-url>https://fardina143.github.io/b1eines/index.html</contents-url>
+<contents-url>https://fardina143.github.io/b1eines/index.html</contents-url>
 <graphic-url></graphic-url>
 <font-face>Segoe, Arial</font-face>
 <font-size>medium</font-size>

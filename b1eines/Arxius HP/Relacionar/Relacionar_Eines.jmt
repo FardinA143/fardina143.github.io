@@ -69,7 +69,7 @@
 <jmatch>
 <exercise-subtitle>Exercici d&apos;associaci&amp;#x00F3;</exercise-subtitle>
 <instructions>Arrosega els elements la columna de la dreta cap a l&apos;esquerra, o b&amp;#x00E9; escull el correcte de la llista desplegable.</instructions>
-<next-ex-url></next-ex-url>
+<next-ex-url>nextpage.htm</next-ex-url>
 <send-email>0</send-email>
 <show-limited-questions>0</show-limited-questions>
 <questions-to-show>1</questions-to-show>
@@ -96,7 +96,7 @@
 <include-next-ex>0</include-next-ex>
 <include-contents>1</include-contents>
 <include-back>0</include-back>
-<contents-url>https://fardina143.github.io</contents-url>
+<contents-url>https://fardina143.github.io/b1eines/index.html</contents-url>
 <graphic-url></graphic-url>
 <font-face>Segoe, Arial</font-face>
 <font-size>medium</font-size>
