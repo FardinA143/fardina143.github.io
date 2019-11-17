@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jquiz-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Fardin A.</dc:creator>
+    <dc:title>Quin dels seg&amp;#x00FC;ents tipus de bigues no existeix?
+Quin dels seg&amp;#x00FC;ents tipus de bigues no existeix?
+ESTRUCTURES</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>7</version>
+
+<data>
+<title>Quin dels seg&amp;#x00FC;ents tipus de bigues no existeix?
+Quin dels seg&amp;#x00FC;ents tipus de bigues no existeix?
+ESTRUCTURES</title>
+
+<timer><seconds>60</seconds><include-timer>0</include-timer></timer>
+
+<reading>
+<include-reading>0</include-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions><question-record><question>Quin dels seg&amp;#x00FC;ents tipus de bigues no existeix?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>Bigues en T</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Bigues en U</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Bigues Angulars</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Bigues en X</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Quina d&amp;#x2019;aquestes forces treballen les bigues principalment?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>Flexi&amp;#x00F3;</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Torsi&amp;#x00F3;</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Compressi&amp;#x00F3;</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Totes les anteriors s&amp;#x00F3;n incorrectes</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Quina funci&amp;#x00F3; compleixen les columnes?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>Objecte decoratiu</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Soportar les forces obliq&amp;#x00FC;es de l&apos;alquitrau i l&apos;arc</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Totes les respostes s&amp;#x00F3;n correctes</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Soportar les forces verticals</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>S&amp;#x00F3;n els forjats capa&amp;#x00E7;os de transmetre les c&amp;#x00E0;rregues que suporta a altres elements de l&amp;#x2019;estructura?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>Si</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>No</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>A vegades</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Cap de les respostes &amp;#x00E9;s correcta</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Quin angle t&amp;#x00E9; la secci&amp;#x00F3; de una biga angular?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>90&amp;#x00BA;</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>45&amp;#x00BA;</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>55&amp;#x00BA;</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>180&amp;#x00BA;</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record></questions>
+</data>
+
+<hotpot-config-file>
+<jquiz>
+<exercise-subtitle></exercise-subtitle>
+<instructions></instructions>
+<guess-correct>Correct!</guess-correct>
+<guess-incorrect>Sorry! Try again.</guess-incorrect>
+<partly-incorrect>Your answer is partly wrong: </partly-incorrect>
+<enter-a-guess>Please enter a guess.</enter-a-guess>
+<next-correct-letter>Next correct letter in the answer: </next-correct-letter>
+<correct-answers>Correct answers: </correct-answers>
+<show-answer-caption>Show answer</show-answer-caption>
+<include-hint>1</include-hint>
+<include-show-answer>1</include-show-answer>
+<next-ex-url></next-ex-url>
+<send-email>0</send-email>
+<continuous-scoring>1</continuous-scoring>
+<show-correct-first-time>0</show-correct-first-time>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>1</questions-to-show>
+<short-answer-tries-on-hybrid-q>2</short-answer-tries-on-hybrid-q>
+<separate-javascript-file>0</separate-javascript-file>
+<case-sensitive>0</case-sensitive>
+<include-keypad>0</include-keypad>
+</jquiz>
+
+<global>
+<your-score-is>La teva puntuaci&amp;#x00F3; &amp;#x00E9;s:</your-score-is>
+<correct-indicator>:-)</correct-indicator>
+<incorrect-indicator>:-(</incorrect-indicator>
+<correct-first-time>Questions answered correctly first time: </correct-first-time>
+<completed-so-far>Questions completed so far: </completed-so-far>
+<exercise-completed>You have completed the exercise.</exercise-completed>
+<keypad-characters></keypad-characters>
+<times-up>El temps s&apos;ha acabat!</times-up>
+<next-ex-caption>&amp;#x003E;&amp;#x003E;</next-ex-caption>
+<back-caption>&amp;#x003C;&amp;#x003C;</back-caption>
+<contents-caption>V&amp;#x00E9;s als continguts</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>https://fardina143.github.io/b2estructura/index.html</contents-url>
+<graphic-url></graphic-url>
+<font-face>Segoe, Arial</font-face>
+<font-size>medium</font-size>
+<page-bg-color>#0080ff</page-bg-color>
+<title-color>#ffffff</title-color>
+<ex-bg-color>#c5fdc4</ex-bg-color>
+<text-color>#000000</text-color>
+<link-color>#0000cc</link-color>
+<vlink-color>#ff8040</vlink-color>
+<nav-bar-color>#ff0000</nav-bar-color>
+<formmail-url></formmail-url>
+<email></email>
+<name-please>Please enter your name:</name-please>
+<user-string-1>one</user-string-1>
+<user-string-2>two</user-string-2>
+<user-string-3>three</user-string-3>
+<header-code>&amp;#x003C;!-- Global site tag (gtag.js) - Google Analytics --&amp;#x003E;
+&amp;#x003C;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=UA-99715518-3&quot;&amp;#x003E;&amp;#x003C;/script&amp;#x003E;
+&amp;#x003C;script&amp;#x003E;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag(&apos;js&apos;, new Date());
+
+  gtag(&apos;config&apos;, &apos;UA-99715518-3&apos;);
+&amp;#x003C;/script&amp;#x003E;
+</header-code>
+<correct-first-time>Questions answered correctly first time: </correct-first-time>
+<check-caption>Comprova resposta</check-caption>
+<ok-caption>D&apos;acord</ok-caption>
+<next-q-caption>=&amp;#x003E;</next-q-caption>
+<last-q-caption>&amp;#x003C;=</last-q-caption>
+<hint-caption>Hint</hint-caption>
+<show-all-questions-caption>Show all questions</show-all-questions-caption>
+<show-one-by-one-caption>Show questions one by one</show-one-by-one-caption>
+<show-also-correct>1</show-also-correct>
+<process-for-rtl>0</process-for-rtl>
+<include-scorm-12>1</include-scorm-12>
+</global>
+</hotpot-config-file>
+</hotpot-jquiz-file>

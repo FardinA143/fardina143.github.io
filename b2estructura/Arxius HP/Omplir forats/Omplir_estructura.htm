@@ -4,7 +4,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
 <meta name="dc:creator" content="Fardin A." />
-<meta name="dc:creator" content="Arshdeep" />
 <meta name="dc:title" content="ESTRUCTURES" />
 
 
@@ -1044,181 +1043,130 @@ function ClearTextBoxes(){
 
 
 
-//Polyfill for old Safari versions.
-if (window.NodeList && !NodeList.prototype.forEach) {
-    NodeList.prototype.forEach = Array.prototype.forEach;
-}
 
-
-//JMATCH-SPECIFIC SCORM-RELATED JAVASCRIPT CODE
-
+//JCLOZE-SPECIFIC SCORM-RELATED JAVASCRIPT CODE
 
 function SetScormScore(){
 //Reports the current score and any other information back to the LMS
 	if (API != null){
 		API.LMSSetValue('cmi.core.score.raw', Score);
-		
-		
-//Now send a detailed reports on the item
-		var ItemLabel = 'Matching';
-		API.LMSSetValue('cmi.objectives.0.id', 'obj'+ItemLabel);
-		API.LMSSetValue('cmi.interactions.0.id', 'int'+ItemLabel);	
-		API.LMSSetValue('cmi.objectives.0.status', API.LMSGetValue('cmi.core.lesson_status'));	
-		API.LMSSetValue('cmi.objectives.0.score.min', '0');
-		API.LMSSetValue('cmi.objectives.0.score.max', '100');
-		API.LMSSetValue('cmi.objectives.0.score.raw', Score);
-//We can only use the performance type, because we're storing multiple responses of various types.
-		API.LMSSetValue('cmi.interactions.0.type', 'performance');
-		API.LMSSetValue('cmi.interactions.0.student_response', AnswersTried);
-		
+//Now send detailed reports about each item
+		for (var i=0; i<State.length; i++){
+			var ThisItemGuesses = '';
+			var GapLabel = 'Gap_' + (i+1).toString();	
+			var ThisItemScore = Math.floor(State[i].ItemScore * 100) + '';
+			API.LMSSetValue('cmi.objectives.' + i + '.id', 'obj'+GapLabel);
+			API.LMSSetValue('cmi.interactions.' + i + '.id', 'int'+GapLabel);
+			API.LMSSetValue('cmi.objectives.' + i + '.score.raw', ThisItemScore);
+			API.LMSSetValue('cmi.objectives.' + i + '.score.min', '0');
+			API.LMSSetValue('cmi.objectives.' + i + '.score.max', '100');
+			if (State[i].AnsweredCorrectly == true){
+				API.LMSSetValue('cmi.objectives.' + i + '.status', 'completed');
+			}
+			else{
+				API.LMSSetValue('cmi.objectives.' + i + '.status', 'incomplete');
+			}
+			for (var j=0; j<State[i].Guesses.length; j++){
+				if (j>0){ThisItemGuesses += ' | ';}
+				ThisItemGuesses += State[i].Guesses[j];	
+			}	
+			API.LMSSetValue('cmi.interactions.' + i + '.type', 'fill-in');
+			API.LMSSetValue('cmi.interactions.' + i + '.student_response', ThisItemGuesses);
+		}		
 		API.LMSCommit('');
 	}
 }
 
 
-//JMATCH-SPECIFIC CORE JAVASCRIPT CODE
+//JCLOZE CORE JAVASCRIPT CODE
 
-var CorrectResponse = 'Correcte! Enhorabona!';
-var IncorrectResponse = 'Ho sentim! Torna a provar.';
+function ItemState(){
+	this.ClueGiven = false;
+	this.HintsAndChecks = 0;
+	this.MatchedAnswerLength = 0;
+	this.ItemScore = 0;
+	this.AnsweredCorrectly = false;
+	this.Guesses = new Array();
+	return this;
+}
+
+var Feedback = '';
+var Correct = 'Correcte! Molt b&#x00E9;!';
+var Incorrect = 'Algunes de les teves respostes s&#x00F3;n incorrectes. Aquestes s\'han eliminat perqu&#x00E8; ho tornis a intentar.'; 
+var GiveHint = 'La seg&#x00FC;ent lletra correcta s\'ha afegit a la resposta';
+var CaseSensitive = false;
 var YourScoreIs = 'La teva puntuaci&#x00F3; &#x00E9;s:';
-var FeedbackWidth = 200; //default
-var ExBGColor = '#c5fdc4';
-var PageBGColor = '#0080ff';
-var TextColor = '#000000';
-var TitleColor = '#ffffff';
-var Penalties = 0;
-var Score = 0;
-var TimeOver = false;
-var Locked = false;
-var ShuffleQs = false;
-var QsToShow = 0;
-var ResizeTimer = null;
-
-var LeftColPos = 100;
-var RightColPos = 500;
-var DragTop = 120;
 var Finished = false;
-var AnswersTried = '';
+var Locked = false;
+var Score = 0;
+var CurrentWord = 0;
+var Guesses = '';
+var TimeOver = false;
 
-//Fixed and draggable card arrays
-FC = new Array();
-DC = new Array();
+I = new Array();
 
-var DraggingCard = null;
-var moveFunc = function(e){e.preventDefault(); doDrag(e)};
-var endFunc = function(e){e.preventDefault(); endDrag(e)};
+I[0] = new Array();
+I[0][1] = new Array();
+I[0][1][0] = new Array();
+I[0][1][0][0] = '\u0063\u006F\u006C\u0075\u006D\u006E\u0061';
+I[0][2]='';
 
-function beginDrag(e, Card){
-	DraggingCard = Card;
-	DraggingCard.Highlight();
-	window.addEventListener('mousemove',  moveFunc);
-	window.addEventListener('mouseup',    endFunc);
-	window.addEventListener('touchmove',  moveFunc);
-	window.addEventListener('touchend',   endFunc);
-	var currX, currY;
-	if (e.touches){
-		currX = e.touches[0].clientX;
-		currY = e.touches[0].clientY;
+I[1] = new Array();
+I[1][1] = new Array();
+I[1][1][0] = new Array();
+I[1][1][0][0] = '\u0073\u0075\u0070\u006F\u0072\u0074';
+I[1][2]='';
+
+I[2] = new Array();
+I[2][1] = new Array();
+I[2][1][0] = new Array();
+I[2][1][0][0] = '\u0063\u0069\u0072\u0063\u0075\u006C\u0061\u0072';
+I[2][2]='';
+
+I[3] = new Array();
+I[3][1] = new Array();
+I[3][1][0] = new Array();
+I[3][1][0][0] = '\u0076\u0065\u0072\u0074\u0069\u0063\u0061\u006C\u0073';
+I[3][2]='';
+
+I[4] = new Array();
+I[4][1] = new Array();
+I[4][1][0] = new Array();
+I[4][1][0][0] = '\u0070\u0069\u006C\u0061\u0072';
+I[4][2]='';
+
+I[5] = new Array();
+I[5][1] = new Array();
+I[5][1][0] = new Array();
+I[5][1][0][0] = '\u0076\u0065\u0072\u0074\u0069\u0063\u0061\u006C';
+I[5][2]='';
+
+I[6] = new Array();
+I[6][1] = new Array();
+I[6][1][0] = new Array();
+I[6][1][0][0] = '\u0063\u00E0\u0072\u0072\u0065\u0067\u0061';
+I[6][2]='';
+
+I[7] = new Array();
+I[7][1] = new Array();
+I[7][1][0] = new Array();
+I[7][1][0][0] = '\u006D\u0065\u0073\u0074\u0072\u0061';
+I[7][2]='';
+
+I[8] = new Array();
+I[8][1] = new Array();
+I[8][1][0] = new Array();
+I[8][1][0][0] = '\u0062\u0069\u0067\u0075\u0065\u0073';
+I[8][2]='';
+
+
+State = new Array();
+
+function StartUp(){
+//Show a keypad if there is one	(added bugfix for 6.0.4.12)
+	if (document.getElementById('CharacterKeypad') != null){
+		document.getElementById('CharacterKeypad').style.display = 'block';
 	}
-	else{
-		currX = e.clientX;
-		currY = e.clientY; 
-	}
-
-	topZ++;
-	DraggingCard.style.zIndex = topZ;
-	window.lastX = currX; 
-	window.lastY = currY;
-	return false;  
-} 
-
-
-function doDrag(e) {
-	var currX, currY;
-	var difX, difY;
-	if (e.touches){
-		currX = e.touches[0].clientX;
-		currY = e.touches[0].clientY;
-	}
-	else{
-		currX = e.clientX;
-		currY = e.clientY; 
-	}
-	
-	difX = currX - window.lastX; 
-	difY = currY - window.lastY;
-	DraggingCard.style.left = DraggingCard.GetL() + difX + 'px'; 
-	DraggingCard.style.top  = DraggingCard.GetT() + difY + 'px'; 
-	window.lastX = currX; 
-	window.lastY = currY; 
-	return false;
-} 
-
-function endDrag(e) { 
-	DraggingCard.Unhighlight();
-	window.removeEventListener('mousemove', moveFunc);
-	window.removeEventListener('touchmove', moveFunc);
-	window.removeEventListener('mouseup', endFunc);
-	window.removeEventListener('touchend', endFunc);
-	onEndDrag();	
-	return true;
-} 
-
-function onEndDrag(){ 
-	DraggingOrigPos = parseInt(DraggingCard.getAttribute('id').substring(2));
-	DragEx.HandleDrop(DraggingOrigPos);
-	DraggingCard = null;
-} 
-
-//Utility functions for dimensions of elements.
-var GetL = function(){
-	return this.offsetLeft;
-}
-var GetR = function(){
-	return this.offsetLeft + this.offsetWidth;
-}
-var GetT = function(){
-	return this.offsetTop;
-}
-var GetB = function(){
-	return this.offsetTop + this.offsetHeight;
-}
-var GetH = function(){
-	return this.offsetHeight;
-}
-var GetW = function(){
-	return this.offsetWidth;
-}
-var Highlight = function(){
-	this.style.backgroundColor = '#000000'
-	this.style.color = '#c5fdc4';
-};
-var Unhighlight = function(){
-	this.style.backgroundColor = '#c5fdc4'
-	this.style.color = '#000000';
-};
-var GetOverlap = function(OtherCard){
-	var smR=(this.GetR() < OtherCard.GetR())? this.GetR(): OtherCard.GetR();
-	var lgL=(this.GetL() > OtherCard.GetL())? this.GetL(): OtherCard.GetL();
-	var HDim=smR-lgL;
-	if (HDim<1){return 0;}
-	var smB=(this.GetB() < OtherCard.GetB())? this.GetB(): OtherCard.GetB();
-	var lgT=(this.GetT() > OtherCard.GetT())? this.GetT(): OtherCard.GetT();
-	var VDim=smB-lgT;
-	if (VDim<1){return 0;}
-	return (HDim*VDim);	
-};
-
-/*
-  The new V7 DragEx object replaces the arrays of old.
-*/
-var V7JsonEx = '{  "ShuffleLeftItems": false,  "IsSimple": true,  "ItemsToShow": -1,  "LeftItems": [{"OrigPos": 0,     "Group": 0}, {"OrigPos": 1,     "Group": 1}, {"OrigPos": 2,     "Group": 2}, {"OrigPos": 3,     "Group": 3}, {"OrigPos": 4,     "Group": 4}],  "RightItems": [{"OrigPos": 0,     "Groups": [0], "MatchedWith": -1}, {"OrigPos": 1,     "Groups": [1], "MatchedWith": -1}, {"OrigPos": 2,     "Groups": [2], "MatchedWith": -1}, {"OrigPos": 3,     "Groups": [3], "MatchedWith": -1}, {"OrigPos": 4,     "Groups": [4], "MatchedWith": -1}]}';
-
-var DragEx = JSON.parse(V7JsonEx);
-
-//Methods for the object.
-DragEx.Setup = function(){
-	var i;
 	
 
 	ScormStartUp();
@@ -1228,395 +1176,291 @@ DragEx.Setup = function(){
 
 
 
-//Add custom functions to all the cards.
-	document.querySelectorAll('div.CardStyle').forEach(function(div){
-		div.Highlight = Highlight.bind(div);
-		div.Unhighlight = Unhighlight.bind(div);
-		div.GetL = GetL.bind(div);
-		div.GetT = GetT.bind(div);
-		div.GetR = GetR.bind(div);
-		div.GetB = GetB.bind(div);
-		div.GetH = GetH.bind(div);
-		div.GetW = GetW.bind(div);
-		div.GetOverlap = GetOverlap.bind(div);
-	}.bind(this));
-	
-//Connect each of the items to its card.
-	this.LeftItems.forEach(function(LI){
-		LI.Card = document.getElementById('L_' + LI.OrigPos);
-	}.bind(this));
-	this.RightItems.forEach(function(RI){
-		RI.Card = document.getElementById('R_' + RI.OrigPos);
-		RI.Card.addEventListener('mousedown',  (function(e){beginDrag(e, this)}.bind(RI.Card)));
-		RI.Card.addEventListener('touchstart', (function(e){beginDrag(e, this)}.bind(RI.Card)));
-		RI.Card.style.cursor = 'grab';
-	}.bind(this));
-//Reduce the items as required. Sanity check: don't allow less than 2.
-	if (this.ItemsToShow > 2){
-		while (this.LeftItems.length > this.ItemsToShow){
-			RemItem = Math.floor(this.LeftItems.length*Math.random());
-			OP = this.LeftItems[RemItem].OrigPos;
-			this.LeftItems[RemItem].Card.parentNode.removeChild(this.LeftItems[RemItem].Card);
-			this.LeftItems.splice([RemItem], 1);
+	var i = 0;
 
-//Having removed an item from the left, we must remove the corresponding 
-//one from the right if it exists. (There may not be a matching item if 
-//the one removed was a distractor.)
-			for (i = 0; i < this.RightItems.length; i++){
-				if (this.RightItems[i].OrigPos == OP){
-					this.RightItems[i].Card.parentNode.removeChild(this.RightItems[i].Card);
-					this.RightItems.splice(i, 1);
-				}
-			}
+	State.length = 0;
+	for (i=0; i<I.length; i++){
+		State[i] = new ItemState();
+	}
+	
+	ClearTextBoxes();
+	
+
+
+}
+
+function ShowClue(ItemNum){
+	if (Locked == true){return;}
+	State[ItemNum].ClueGiven = true;
+	ShowMessage(I[ItemNum][2]);
+}
+
+function SaveCurrentAnswers(){
+	var Ans = '';
+	for (var i=0; i<I.length; i++){
+		Ans = GetGapValue(i);
+		if ((Ans.length > 0)&&(Ans != State[i].Guesses[State[i].Guesses.length-1])){
+			State[i].Guesses[State[i].Guesses.length] = Ans;
 		}
-	}
-//Now do any shuffling that's required.
-	if (this.ShuffleLeftItems == true){
-		this.LeftItems = Shuffle(this.LeftItems);
-	}
-	this.RightItems = Shuffle(this.RightItems);
-	
-	this.SetInitialPositions(true);
-	
-//Fix to avoid image dragging problem in cards with images.
-	var DragImgs = document.querySelectorAll('div.CardStyle img');
-	for (i = 0; i<DragImgs.length; i++){
-		DragImgs[i]. onmousedown = function(){return false;}
-	}
-
-//We use a timeout here to allow card positions to be established
-//before they're used for sliding matched cards.
-	window.addEventListener('resize', function(e){
-		clearTimeout(ResizeTimer);
-		ResizeTimer = setTimeout(function(){DragEx.SetInitialPositions(false)}, 250);
-	});
-
-	
-
-};
-
-DragEx.GetLeftItemByOrigPos = function(Pos){
-	for (var i=0; i<this.LeftItems.length; i++){
-		if (this.LeftItems[i].OrigPos === Pos){
-			return this.LeftItems[i];
-		}
-	}
-	return null;
-};
-
-DragEx.GetRightItemByOrigPos = function(Pos){
-	for (var i=0; i<this.RightItems.length; i++){
-		if (this.RightItems[i].OrigPos === Pos){
-			return this.RightItems[i];
-		}
-	}
-	return null;
-};
-
-DragEx.SendHome = function(ROrigPos){
-	Slide(ROrigPos, this.GetRightItemByOrigPos(ROrigPos).Home);
-};
-
-DragEx.SetInitialPositions = function(slide){
-	
-	var ExDiv = document.querySelector('div.ExerciseContainer');
-	
-//Get the default font size.
-	var FontSize = Math.round(parseFloat(getComputedStyle(ExDiv).fontSize));
-	
-//Get the value of any drop-shadow on the cards so we can allow for it in layout.
-	var DS =  window.getComputedStyle(this.LeftItems[0].Card).getPropertyValue('box-shadow').split('px ');
-	var DSOffset = 5;
-	if ((DS.length > 1)&&(!(Number.isNaN(parseFloat(DS[1]))))){
-		DSOffset += Math.abs(Math.ceil(parseFloat(DS[1])));
-	}
-	
-//Calculate container dimensions and positions
-	DragTop = parseInt(document.getElementById('CheckButtonDiv').offsetHeight) + parseInt(document.getElementById('CheckButtonDiv').offsetTop) + DSOffset;
-	
-console.log('DSOffset = ' + DSOffset);
-	
-	var ExDivLeft = ExDiv.offsetLeft;
-	var ExDivWidth = ExDiv.offsetWidth;	
-	var Indent = Math.min(Math.floor(ExDivWidth / 20), FontSize);
-	var DragWidth = Math.floor(ExDivWidth / 4);
-	LeftColPos = ExDivLeft + Indent;
-
-//Calculate the width for the left items.	
-	var WidestLeft = 0;
-	for (var i=0; i<this.LeftItems.length; i++){
-		var CurrCard = this.LeftItems[i].Card;
-		CurrCard.style.width = '';
-		CurrCard.style.height = '';
-		var w = CurrCard.GetW() + 10;
-		if (w > WidestLeft){
-			WidestLeft = w;
-		}
-	}
-	if (WidestLeft > DragWidth){WidestLeft = DragWidth;}
-
-//Calculate the width for the right items.
-	DragWidth = Math.floor((ExDivWidth-WidestLeft)/2) - 24;
-	RightColPos = ExDivWidth + LeftColPos - (DragWidth + 14 + Indent);
-	var Highest = 0;
-	var WidestRight = 0;
-
-	for (i=0; i<this.RightItems.length; i++){
-		var CurrCard = this.RightItems[i].Card;
-		CurrCard.style.width = '';
-		CurrCard.style.height = '';
-		if (CurrCard.GetW() > DragWidth){CurrCard.style.width = DragWidth + 'px';}
-		if (CurrCard.GetH() > Highest){Highest = CurrCard.GetH();}
-		if (CurrCard.GetW() > WidestRight){WidestRight = CurrCard.GetW();}
-	}
-
-//Size and position the right items.		
-	var CurrTop = DragTop;
-	
-	for (i=0; i<this.RightItems.length; i++){
-		var CurrCard = this.RightItems[i].Card;
-		CurrCard.style.top = CurrTop + 'px';
-		CurrCard.style.left = RightColPos + 'px';
-		CurrCard.style.height = Highest + 'px';
-		CurrCard.style.width = (WidestRight + 10) + 'px';
-		this.RightItems[i].Home = [RightColPos, CurrTop];
-		CurrTop = CurrTop + CurrCard.GetH() + DSOffset;
-	}
-
-//Size and position the left items.
-	CurrTop = DragTop;
-
-	for (var i=0; i<this.LeftItems.length; i++){
-		var CurrCard = this.LeftItems[i].Card;
-		CurrCard.style.width = WidestLeft + 'px';
-		if (CurrCard.GetH() < Highest){CurrCard.style.height = Highest + 'px';}
-		CurrCard.style.top = CurrTop + 'px';
-		CurrCard.style.left = LeftColPos + 'px';
-		CurrTop = CurrTop + CurrCard.GetH() + DSOffset;
-	}
-
-//Now we clone the top navbar to create a bottom	
-//navbar, and position it.
-	var TopNav = document.getElementById('TopNavBar');
-	var ReadingDiv = document.getElementById('ReadingDiv');
-	
-	if (TopNav !== null){
-
-//First delete one if there is one.
-		var BottomNav = document.getElementById('BottomNavBar');
-		if (BottomNav === null){
-			BottomNav = document.getElementById('TopNavBar').cloneNode(true);
-			BottomNav.setAttribute('id', 'BottomNavBar');
-			BottomNav.style.position = 'absolute';
-			document.body.appendChild(BottomNav);
-		}
-		var LowestLeft = this.LeftItems[this.LeftItems.length - 1].Card.GetB();
-		var LowestRight = this.RightItems[this.RightItems.length - 1].Card.GetB();
-		var ReadingBottom = (ReadingDiv)? ReadingDiv.offsetTop + ReadingDiv.offsetHeight : 0;
-		BottomNav.style.top = (Math.max(ReadingBottom, LowestLeft, LowestRight) + FontSize) + 'px' ;
-		BottomNav.style.width = document.getElementById('TopNavBar').offsetWidth + 'px';
-	}
-	
-//Now slide any already-matched items into position.
-	this.RightItems.forEach(function(RI){
-		if (RI.MatchedWith > -1){
-			var TargPoint = this.GetDockPoint(RI.MatchedWith, RI.Card);
-			if (RI.MarkedWrong == true){
-				RI.Card.Highlight();
-				TargPoint[0] = TargPoint[0] + 10;
-			}
-			if (slide == true){
-				Slide(RI.OrigPos, TargPoint);
-			}
-			else{
-				RI.Card.style.left = TargPoint[0] + 'px';
-				RI.Card.style.top  = TargPoint[1] + 'px'; 
-			}
-		}
-	}.bind(this));
-};
-
-DragEx.GetDockPoint = function(LeftOrigPos, RightCard){
-	var TargL, TargT;
-	var LeftItem = this.GetLeftItemByOrigPos(LeftOrigPos);
-	if (LeftItem !== null){
-		var LeftCard = LeftItem.Card;
-		TargL = LeftCard.GetR() + 5;
-		TargT = (LeftCard.GetT() + Math.floor((LeftCard.GetH() - RightCard.GetH()) / 2));
-		return [TargL, TargT];
-	}
-	else{
-		return [0,0];
 	}
 }
 
-DragEx.HandleDrop = function(ROrigPos){
-	var RI = this.GetRightItemByOrigPos(ROrigPos);
-	RI.MarkedWrong = false;
-	RI.MatchedWith = -1;
-	RI.Card.Unhighlight();
-	var Overlap = 0;
-	var MatchedWith = -1;
-	var i;
-	this.LeftItems.forEach(function(LI){
-		var OL = RI.Card.GetOverlap(LI.Card);
-//Check whether it overlaps a card, or is in exact docking position with it.
-		var DP = this.GetDockPoint(LI.OrigPos, RI.Card);
-console.log(DP + ' : ' + RI.Card.GetL() + ',' + RI.Card.GetT());
-		if ((OL > Overlap)||((RI.Card.GetL() == DP[0])&&(RI.Card.GetT() == DP[1]))){
-			Overlap = OL;
-			MatchedWith = LI.OrigPos;
+function CompileGuesses(){
+	var F = document.getElementById('store');
+	if (F != null){
+		var Temp = '<?xml version="1.0"?><hpnetresult><fields>';
+		var GapLabel = '';
+		for (var i=0; i<State.length; i++){
+			GapLabel = 'Gap ' + (i+1).toString();
+			Temp += '<field><fieldname>' + GapLabel + '</fieldname>';
+			Temp += '<fieldtype>student-responses</fieldtype><fieldlabel>' + GapLabel + '</fieldlabel>';
+			Temp += '<fieldlabelid>JClozeStudentResponses</fieldlabelid><fielddata>';
+			for (var j=0; j<State[i].Guesses.length; j++){
+				if (j>0){Temp += '| ';}
+				Temp += State[i].Guesses[j] + ' ';	
+			}	
+  		Temp += '</fielddata></field>';
 		}
-	}.bind(this));
-	if (MatchedWith > -1){
-		RI.MatchedWith = MatchedWith;
-		TargPoint = this.GetDockPoint(MatchedWith, RI.Card);
-		Slide(ROrigPos, TargPoint);
-		this.RightItems.forEach(function(RI2){
-			if ((RI2.OrigPos !== RI.OrigPos)&&(RI2.MatchedWith == MatchedWith)){
-				RI2.MatchedWith = -1;
-				RI2.Card.Unhighlight();
-				this.SendHome(RI2.OrigPos);
-				RI2.MarkedWrong = false;
-			}
-		}.bind(this));
+		Temp += '</fields></hpnetresult>';
+		Detail = Temp;
 	}
-	else{
-		this.SendHome(ROrigPos);
-	}
-}
-
-//This function checks answers and calculates the 
-//current score, then returns true for "finished" or
-//false for "not yet finished". The object's Score
-//property can then be read.
-DragEx.CheckAnswers = function(){
-/*
-	Check each right item to see whether a) it had an 
-	original match on the left, and b) it is matched
-	to a left item whose group is one of its groups.
-*/
-	if (!this.hasOwnProperty('Penalties')){
-		this.Penalties = 0;
-	}
-	var ItemsToCount = 0;
-	var CorrectItems = 0;
-	var Done = true; //Assume till proven otherwise.
-	
-//Tot up the scores.
-	this.RightItems.forEach(function(RI){
-//Only use it if there is a match for it.
-		if (this.GetLeftItemByOrigPos(RI.OrigPos) !== null){
-			ItemsToCount++;
-			if (RI.MatchedWith !== -1){
-				var LI = this.GetLeftItemByOrigPos(RI.MatchedWith);
-				if (RI.Groups.indexOf(LI.Group) > -1){
-					CorrectItems++;
-				}
-				else{
-					Done = false;
-					RI.Card.Highlight();
-					RI.MarkedWrong = true;
-					RI.Card.style.left = (RI.Card.GetL() + 10) + 'px';
-				}
-			}
-			else{
-				Done = false;
-			}
-		}
-		else{
-//It's a distractor and shouldn't be matched. Deduct one from score.
-			if (RI.MatchedWith !== -1){
-				Done = false;
-				RI.Card.Highlight();
-				RI.Card.style.left = (RI.Card.GetL() + 10) + 'px';
-				RI.MarkedWrong = true;
-				CorrectItems--;
-			}
-		}
-	}.bind(this));
-	if (!this.hasOwnProperty('Score')){
-		this.Score = 0;
-	}
-	this.Score = Math.round((100*(CorrectItems - this.Penalties))/ItemsToCount);
-	if (Done === false){
-		this.Penalties++;
-	}
-	return Done;
-};
-
-function Slide(ROrigPos, TargPoint){
-	var Card = DragEx.GetRightItemByOrigPos(ROrigPos).Card;
-	if (Math.abs(Card.GetL() - TargPoint[0]) <= 5){
-		Card.style.left = TargPoint[0] + 'px';
-	}
-	else{
-		var LeftShift = Card.GetL() < TargPoint[0]? 5: -5;
-		Card.style.left = Card.GetL() + LeftShift + 'px';
-	}
-	if (Card.GetT() !== TargPoint[1]){
-		if (Math.abs(Card.GetT() - TargPoint[1]) <= 5){
-			Card.style.top = TargPoint[1] + 'px';
-		}
-		else{
-			var TopShift = Card.GetT() < TargPoint[1]? 5: -5;
-			Card.style.top = Card.GetT() + TopShift + 'px';
-		}
-	}
-	if ((Card.GetL() != TargPoint[0])||(Card.GetT() != TargPoint[1])){
-		setTimeout('Slide(' + ROrigPos + ', [' + TargPoint[0] + ',' + TargPoint[1] + '])', 1);
-	}
-}
-
-function TimerStartUp(){
-	setTimeout('DragEx.Setup()', 300);
 }
 
 function CheckAnswers(){
 	if (Locked == true){return;}
-	
-	var Feedback = '';
+	SaveCurrentAnswers();
+	var AllCorrect = true;
 
-	var AllDone = DragEx.CheckAnswers();
-	Score = DragEx.Score;
-	if (Score < 0){Score = 0;}
+//Check each answer
+	for (var i = 0; i<I.length; i++){
 
-	if (AllDone == true){
-		Feedback = YourScoreIs + ' ' + Score + '%.<br/>' + CorrectResponse;
-	}
-	else {
-		if (TimeOver == true){
-			Feedback = YourScoreIs + ' ' + Score + '%.'
+		if (State[i].AnsweredCorrectly == false){
+//If it's right, calculate its score
+			if (CheckAnswer(i, true) > -1){
+				var TotalChars = GetGapValue(i).length;
+				State[i].ItemScore = (TotalChars-State[i].HintsAndChecks)/TotalChars;
+				if (State[i].ClueGiven == true){State[i].ItemScore /= 2;}
+				if (State[i].ItemScore <0 ){State[i].ItemScore = 0;}
+				State[i].AnsweredCorrectly = true;
+//Drop the correct answer into the page, replacing the text box
+				SetCorrectAnswer(i, GetGapValue(i));
+			}
+			else{
+//Otherwise, increment the hints for this item, as a penalty
+				State[i].HintsAndChecks++;
+
+//then set the flag
+				AllCorrect = false;
+			}
 		}
-		else{
-			Feedback = YourScoreIs + ' ' + Score + '%.' + '<br />' + IncorrectResponse;
-		}
 	}
-	ShowMessage(Feedback);
+
+//Calculate the total score
+	var TotalScore = 0;
+	for (i=0; i<State.length; i++){
+		TotalScore += State[i].ItemScore;
+	}
+	TotalScore = Math.floor((TotalScore * 100)/I.length);
+
+//Compile the output
+	Output = '';
+
+	if (AllCorrect == true){
+		Output = Correct + '<br />';
+	}
+
+	Output += YourScoreIs + ' ' + TotalScore + '%.<br />';
+	if (AllCorrect == false){
+		Output += Incorrect;
+	}
+	ShowMessage(Output);
+	setTimeout('WriteToInstructions(Output)', 50);
 	
-//If the exercise is over, deal with that
-	if ((AllDone == true)||(TimeOver == true)){
+	Score = TotalScore;
+	CompileGuesses();
+	
+	if ((AllCorrect == true)||(Finished == true)){
+	
 
 
 		TimeOver = true;
 		Locked = true;
 		Finished = true;
-		WriteToInstructions(Feedback);
 	}
 
-	if (AllDone == true){
+	if (AllCorrect == true){
 		SetScormComplete();
 	}
 	else{
 		SetScormIncomplete();
 	}
 
-	
-//The window layout may be affected by the feedback, so 
-//put the cards in place again.
-	DragEx.SetInitialPositions(false);
 }
 
+function TrackFocus(BoxNumber){
+	CurrentWord = BoxNumber;
+	InTextBox = true;
+}
+
+function LeaveGap(){
+	InTextBox = false;
+}
+
+function CheckBeginning(Guess, Answer){
+	var OutString = '';
+	var i = 0;
+	var UpperGuess = '';
+	var UpperAnswer = '';
+
+	if (CaseSensitive == false) {
+		UpperGuess = Guess.toUpperCase();
+		UpperAnswer = Answer.toUpperCase();
+	}
+	else {
+		UpperGuess = Guess;
+		UpperAnswer = Answer;
+	}
+
+	while (UpperGuess.charAt(i) == UpperAnswer.charAt(i)) {
+		OutString += Guess.charAt(i);
+		i++;
+	}
+	OutString += Answer.charAt(i);
+	return OutString;
+}
+
+function GetGapValue(GNum){
+	var RetVal = '';
+	if ((GNum<0)||(GNum>=I.length)){return RetVal;}
+	if (document.getElementById('Gap' + GNum) != null){
+		RetVal = document.getElementById('Gap' + GNum).value;
+		RetVal = TrimString(RetVal);
+	}
+	else{
+		RetVal = State[GNum].Guesses[State[GNum].Guesses.length-1];
+	}
+	return RetVal;
+}
+
+function SetGapValue(GNum, Val){
+	if ((GNum<0)||(GNum>=I.length)){return;}
+	if (document.getElementById('Gap' + GNum) != null){
+		document.getElementById('Gap' + GNum).value = Val;
+		document.getElementById('Gap' + GNum).focus();
+	}
+}
+
+function SetCorrectAnswer(GNum, Val){
+	if ((GNum<0)||(GNum>=I.length)){return;}
+	if (document.getElementById('GapSpan' + GNum) != null){
+		document.getElementById('GapSpan' + GNum).innerHTML = Val;
+	}
+}
+
+function FindCurrent() {
+	var x = 0;
+	FoundCurrent = -1;
+
+//Test the current word:
+//If its state is not set to already correct, check the word.
+	if (State[CurrentWord].AnsweredCorrectly == false){
+		if (CheckAnswer(CurrentWord, false) < 0){
+			return CurrentWord;
+		}
+	}
+	
+	x=CurrentWord + 1;
+	while (x<I.length){
+		if (State[x].AnsweredCorrectly == false){
+			if (CheckAnswer(x, false) < 0){
+				return x;
+			}
+		}
+	x++;	
+	}
+
+	x = 0;
+	while (x<CurrentWord){
+		if (State[x].AnsweredCorrectly == false){
+			if (CheckAnswer(x, false) < 0){
+				return x;
+			}
+		}
+	x++;	
+	}
+	return FoundCurrent;
+}
+
+function CheckAnswer(GapNum, MarkAnswer){
+	var Guess = GetGapValue(GapNum);
+	var UpperGuess = '';
+	var UpperAnswer = '';
+	if (CaseSensitive == false){
+		UpperGuess = Guess.toUpperCase();
+	}
+	else{
+		UpperGuess = Guess;
+	}
+	var Match = -1;
+	for (var i = 0; i<I[GapNum][1].length; i++){
+		if (CaseSensitive == false){
+			UpperAnswer = I[GapNum][1][i][0].toUpperCase();
+		}
+		else{
+			UpperAnswer = I[GapNum][1][i][0];
+		}
+		if (TrimString(UpperGuess) == UpperAnswer){
+			Match = i;
+			if (MarkAnswer == true){
+				State[GapNum].AnsweredCorrectly = true;
+			}
+		}
+	}
+	return Match;
+}
+
+function GetHint(GapNum){
+	Guess = GetGapValue(GapNum);
+
+	if (CheckAnswer(GapNum, false) > -1){return ''}
+	RightBits = new Array();
+	for (var i=0; i<I[GapNum][1].length; i++){
+		RightBits[i] = CheckBeginning(Guess, I[GapNum][1][i][0]);
+	}
+	var RightOne = FindLongest(RightBits);
+	var Result = I[GapNum][1][RightOne][0].substring(0,RightBits[RightOne].length);
+//Add another char if the last one is a space
+	if (Result.charAt(Result.length-1) == ' '){
+		Result = I[GapNum][1][RightOne][0].substring(0,RightBits[RightOne].length+1);
+	}
+	return Result;
+}
+
+function ShowHint(){
+	if (document.getElementById('FeedbackDiv').style.display == 'block'){return;}
+	if (Locked == true){return;}
+	var CurrGap = FindCurrent();
+	if (CurrGap < 0){return;}
+
+	var HintString = GetHint(CurrGap);
+
+	if (HintString.length > 0){
+		SetGapValue(CurrGap, HintString);
+		State[CurrGap].HintsAndChecks += 1;
+	}
+	ShowMessage(GiveHint);
+}
+
+function TypeChars(Chars){
+	var CurrGap = FindCurrent();
+	if (CurrGap < 0){return;}
+	var box = document.getElementById('Gap' + CurrGap);
+
+	if (box != null){
+		var selObj = SelObj(box);
+		selObj.setSelText(Chars);
+	}
+}
 
 
 
@@ -1631,9 +1475,11 @@ function CheckAnswers(){
 
 </script>
 
-</head> 
 
-<body onload="TimerStartUp()" id="TheBody" onunload="CheckLMSFinish()"> 
+</head>
+
+<body onload="StartUp()" id="TheBody" onunload="CheckLMSFinish()">
+
 <!-- BeginTopNavButtons -->
 
 
@@ -1642,7 +1488,7 @@ function CheckAnswers(){
 
 
 
-<button class="NavButton" onclick="location='https://fardina143.github.io'; return false;"> V&#x00E9;s als continguts </button>
+<button class="NavButton" onclick="location='https://fardina143.github.io/b2estructura/index.html'; return false;"> V&#x00E9;s als continguts </button>
 
 
 
@@ -1656,14 +1502,14 @@ function CheckAnswers(){
 <div class="Titles">
 	<h2 class="ExerciseTitle">ESTRUCTURES</h2>
 
-	<h3 class="ExerciseSubtitle">Exercici d'associaci&#x00F3;</h3>
+	<h3 class="ExerciseSubtitle">Exercici d'omplir forats</h3>
 
 
 
 </div>
 
 <div id="InstructionsDiv" class="StdDiv">
-	<div id="Instructions">Arrosega els elements la columna de la dreta cap a l'esquerra, o b&#x00E9; escull el correcte de la llista desplegable.</div>
+	<div id="Instructions">Omple tots els forats, despr&#x00E9;s pitja "Comprovar" per comprovar les teves respostes. Empra el bot&#x00F3; "Pista" per a visualitzar la seg&#x00FC;ent lletra de la paraula. Tamb&#x00E9; pots pitjar al bot&#x00F3; "?" per aconseguir ajuda. Si demanes ajuda o pistes perdr&#x00E0;s punts. V&#x00E9;s alerta!</div>
 </div>
 
 
@@ -1671,15 +1517,47 @@ function CheckAnswers(){
 
 
 
-<div class="ExerciseContainer JMatchDrag">
+<div class="ExerciseContainer">
 
-<div class="StdDiv" id="CheckButtonDiv">
+
+
+
+
+
+<!-- These top buttons hidden; reveal if required -->
+<!--
 <button id="CheckButton1" class="FuncButton" onclick="CheckAnswers()">&#160;Comprova resposta&#160;</button>
+
+
+<button class="FuncButton" onclick="ShowHint()">&#160;Pista&#160;</button>
+
+
+ -->
+ 
+<div id="ClozeDiv">
+<form id="Cloze" method="post" autocomplete="off" onsubmit="return false;">
+<div class="ClozeBody">
+La <span class="GapSpan" id="GapSpan0"><input type="text" autocomplete="off" id="Gap0" onfocus="TrackFocus(0)" onblur="LeaveGap()" class="GapBox" size="7"/></span> es un element arquitect&#x00F2;nic de <span class="GapSpan" id="GapSpan1"><input type="text" autocomplete="off" id="Gap1" onfocus="TrackFocus(1)" onblur="LeaveGap()" class="GapBox" size="6"/></span> caracteritzat pel fet d'&#x00E9;sser de secci&#x00F3; <span class="GapSpan" id="GapSpan2"><input type="text" autocomplete="off" id="Gap2" onfocus="TrackFocus(2)" onblur="LeaveGap()" class="GapBox" size="8"/></span> i de complir la funci&#x00F3; de suportar les pressions <span class="GapSpan" id="GapSpan3"><input type="text" autocomplete="off" id="Gap3" onfocus="TrackFocus(3)" onblur="LeaveGap()" class="GapBox" size="9"/></span> i obliq&#x00FC;es de l'arquitrau i l'arc.<br />Un <span class="GapSpan" id="GapSpan4"><input type="text" autocomplete="off" id="Gap4" onfocus="TrackFocus(4)" onblur="LeaveGap()" class="GapBox" size="6"/></span> &#x00E9;s un element arquitect&#x00F2;nic <span class="GapSpan" id="GapSpan5"><input type="text" autocomplete="off" id="Gap5" onfocus="TrackFocus(5)" onblur="LeaveGap()" class="GapBox" size="8"/></span>, de suport, a&#x00EF;llat i mass&#x00ED;s, sobre el qual descansa una volta, una coberta o alguna altra <span class="GapSpan" id="GapSpan6"><input type="text" autocomplete="off" id="Gap6" onfocus="TrackFocus(6)" onblur="LeaveGap()" class="GapBox" size="7"/></span>.<br />La paret <span class="GapSpan" id="GapSpan7"><input type="text" autocomplete="off" id="Gap7" onfocus="TrackFocus(7)" onblur="LeaveGap()" class="GapBox" size="6"/></span> &#x00F3;n les parets que carreguen el pes de l'obra o les <span class="GapSpan" id="GapSpan8"><input type="text" autocomplete="off" id="Gap8" onfocus="TrackFocus(8)" onblur="LeaveGap()" class="GapBox" size="6"/></span>, sostenen voltes, arcades, etc.
+</div>
+</form>
 </div>
 
 
+<div class="Keypad" id="CharacterKeypad">
+<button onclick="TypeChars('\u00E0'); return false;">&#x00E0;</button> 
 </div>
+
+
+<button id="CheckButton2" class="FuncButton" onclick="CheckAnswers()">&#160;Comprova resposta&#160;</button>
+
+
+<button class="FuncButton" onclick="ShowHint()">&#160;Pista&#160;</button>
+
+
 </div>
+
+</div>
+
 
 <div class="Feedback" id="FeedbackDiv">
 <div class="FeedbackText" id="FeedbackContent"></div>
@@ -1688,23 +1566,27 @@ function CheckAnswers(){
 
 <!-- BeginBottomNavButtons -->
 
+
+<div class="NavButtonBar" id="BottomNavBar">
+
+
+
+
+<button class="NavButton" onclick="location='https://fardina143.github.io/b2estructura/index.html'; return false;"> V&#x00E9;s als continguts </button>
+
+
+
+
+</div>
+
+
+
 <!-- EndBottomNavButtons -->
 
 <!-- BeginSubmissionForm -->
 
 <!-- EndSubmissionForm -->
 
-<div id="L_0" class="CardStyle">Quina &#x00E9;s la funci&#x00F3; d&#x2019;una columna?<br /></div>
-<div id="L_1" class="CardStyle">Qu&#x00E8; &#x00E9;s un pilar?<br /></div>
-<div id="L_2" class="CardStyle">Quina for&#x00E7;a treballen principalment les bigues?</div>
-<div id="L_3" class="CardStyle">Qu&#x00E8; &#x00E9;s una paret mestra?</div>
-<div id="L_4" class="CardStyle">Quants tipus de bigues hi han?</div>
-<div id="R_0" class="CardStyle">Suportar les pressions verticals i obliq&#x00FC;es de l'arquitrau i l'arc, alhora de ser un objecte decoratiu.</div>
-<div id="R_1" class="CardStyle">&#x00C9;s un element arquitect&#x00F2;nic vertical, de suport, a&#x00EF;llat i mass&#x00ED;s, sobre el qual descansa una volta, una coberta o alguna altra c&#x00E0;rrega.<br /></div>
-<div id="R_2" class="CardStyle">La flexi&#x00F3;.</div>
-<div id="R_3" class="CardStyle">&#x00C9;s una paret que carrega el pes de les obres o bigues, sostenen arcades, voltes etc.</div>
-<div id="R_4" class="CardStyle">Hi han molts tipus per exemple les que estan en U, en T...</div>
-
-
 </body>
+
 </html>
