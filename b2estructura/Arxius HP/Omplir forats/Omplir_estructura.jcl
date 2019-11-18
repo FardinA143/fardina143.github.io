@@ -4,6 +4,7 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <rdf:Description rdf:about="">
     <dc:creator>Fardin A.</dc:creator>
+    <dc:creator>bilalkz</dc:creator>
     <dc:title>ESTRUCTURES</dc:title>
   </rdf:Description>
 </rdf:RDF><version>7</version>
@@ -20,9 +21,14 @@
 
 </reading>
 
-<gap-fill>La <question-record><question></question><answer><text>columna</text><feedback></feedback><correct>1</correct></answer><clue></clue></question-record> es un element arquitect&amp;#x00F2;nic de <question-record><question></question><answer><text>suport</text><feedback></feedback><correct>1</correct></answer><clue></clue></question-record> caracteritzat pel fet d&apos;&amp;#x00E9;sser de secci&amp;#x00F3; <question-record><question></question><answer><text>circular</text><feedback></feedback><correct>1</correct></answer><clue></clue></question-record> i de complir la funci&amp;#x00F3; de suportar les pressions <question-record><question></question><answer><text>verticals</text><feedback></feedback><correct>1</correct></answer><clue></clue></question-record> i obliq&amp;#x00FC;es de l&apos;arquitrau i l&apos;arc.
-Un <question-record><question></question><answer><text>pilar</text><feedback></feedback><correct>1</correct></answer><clue></clue></question-record> &amp;#x00E9;s un element arquitect&amp;#x00F2;nic <question-record><question></question><answer><text>vertical</text><feedback></feedback><correct>1</correct></answer><clue></clue></question-record>, de suport, a&amp;#x00EF;llat i mass&amp;#x00ED;s, sobre el qual descansa una volta, una coberta o alguna altra <question-record><question></question><answer><text>c&amp;#x00E0;rrega</text><feedback></feedback><correct>1</correct></answer><clue></clue></question-record>.
-La paret <question-record><question></question><answer><text>mestra</text><feedback></feedback><correct>1</correct></answer><clue></clue></question-record> &amp;#x00F3;n les parets que carreguen el pes de l&apos;obra o les <question-record><question></question><answer><text>bigues</text><feedback></feedback><correct>1</correct></answer><clue></clue></question-record>, sostenen voltes, arcades, etc.</gap-fill>
+<gap-fill>1) Les <question-record><question></question><answer><text>columnes</text><feedback></feedback><correct>1</correct></answer><clue></clue></question-record>  son elements arquitectonics de suport caracteritzat pel fet d&apos;&amp;#x00E9;sser de secci&amp;#x00F3; circular i de complir la funci&amp;#x00F3; de suportar les pressions verticals i obliq&amp;#x00FC;es de l&apos;arquitrau i l&apos;arc
+
+2) Els <question-record><question></question><answer><text>pilars</text><feedback></feedback><correct>1</correct></answer><clue></clue></question-record> son un element arquitect&amp;#x00F2;nic vertical, de suport, a&amp;#x00EF;llat i mass&amp;#x00ED;s, sobre el qual descansa una volta, una coberta o alguna altra c&amp;#x00E0;rrega.
+
+3) Les <question-record><question></question><answer><text>parets mestres</text><feedback></feedback><correct>1</correct></answer><clue></clue></question-record> s&amp;#x00F3;n les parets que carreguen el pes de l&apos;obra o les bigues, sostenen voltes, arcades, etc.
+
+4) Les <question-record><question></question><answer><text>bigues</text><feedback></feedback><correct>1</correct></answer><clue></clue></question-record> s&amp;#x00F3;n elements lineals que treballen principalment la flexi&amp;#x00F3;. 
+</gap-fill>
 </data>
 
 <hotpot-config-file>
