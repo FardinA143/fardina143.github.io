@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title></title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-</head>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-99715518-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-99715518-3');
+</script>
+		<title>Entrar en contenido Protegido</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+<center>Hola. Por motivos de seguridad, he cambiado la contraseña de acceso a la página web. Si quieres la nueva contraseña, contactame en <a href src="mailto:fardinarafat10@gmail.com">fardinarafat10@gmail.com</a>, o extraela del HTML</center>
 
 <style>
 body {
@@ -79,7 +96,7 @@ div.vertical {
 	function loadPage(pwd) {
 		var hash= pwd;
 		hash= Sha1.hash(pwd);
-		var url= hash + "/index.html";
+		var url= hash ;
 		$.ajax({
 			url : url,
 			dataType : "html",
