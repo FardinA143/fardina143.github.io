@@ -1,0 +1,3 @@
+AuthType Basic
+AuthName "Entrar en página protegida"
+AuthUserFile ../src/.htpasswd
