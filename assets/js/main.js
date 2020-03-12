@@ -1,43 +1,32 @@
 /*
-	Directive by HTML5 UP
+	Photon by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
 (function($) {
 
-	skel.breakpoints({
-		wide: '(max-width: 1680px)',
-		normal: '(max-width: 1280px)',
-		narrow: '(max-width: 980px)',
-		narrower: '(max-width: 840px)',
-		mobile: '(max-width: 736px)',
-		mobilep: '(max-width: 480px)'
-	});
+	var	$window = $(window),
+		$body = $('body');
 
-	$(function() {
+	// Breakpoints.
+		breakpoints({
+			xlarge:   [ '1141px',  '1680px' ],
+			large:    [ '981px',   '1140px' ],
+			medium:   [ '737px',   '980px'  ],
+			small:    [ '481px',   '736px'  ],
+			xsmall:   [ '321px',   '480px'  ],
+			xxsmall:  [ null,      '320px'  ]
+		});
 
-		var	$window = $(window),
-			$body = $('body');
+	// Play initial animations on page load.
+		$window.on('load', function() {
+			window.setTimeout(function() {
+				$body.removeClass('is-preload');
+			}, 100);
+		});
 
-		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
-
-			$window.on('load', function() {
-				$body.removeClass('is-loading');
-			});
-
-		// Fix: Placeholder polyfill.
-			$('form').placeholder();
-
-		// Prioritize "important" elements on narrower.
-			skel.on('+narrower -narrower', function() {
-				$.prioritize(
-					'.important\\28 narrower\\29',
-					skel.breakpoint('narrower').active
-				);
-			});
-
-	});
+	// Scrolly.
+		$('.scrolly').scrolly();
 
 })(jQuery);
