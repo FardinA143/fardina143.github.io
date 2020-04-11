@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/fardina143
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://fardina143.github.io
+  * I am fardina143 (https://keybase.io/fardina143) on keybase.
+  * I have a public key with fingerprint 31DC 32AC 5EC8 8E4F B006  1AA4 B5D3 AC27 0113 75C0
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01015460e6f91f8e372e74ccef05cf0dbec6ef4ba7441e32fd6068496c14962f85810a",
+      "fingerprint": "31dc32ac5ec88e4fb0061aa4b5d3ac27011375c0",
+      "host": "keybase.io",
+      "key_id": "b5d3ac27011375c0",
+      "kid": "01015460e6f91f8e372e74ccef05cf0dbec6ef4ba7441e32fd6068496c14962f85810a",
+      "uid": "5c56e016d1cf2a4f3d3903e9ea435f19",
+      "username": "fardina143"
+    },
+    "service": {
+      "hostname": "fardina143.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1586609698,
+  "expire_in": 157680000,
+  "prev": "2fbd0e53937ebba56bc014d0dc15ef58786f320e5df25e315d6cb741ba345d7b",
+  "seqno": 4,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMIpAnicrZJJaBRLGMdnYtzilotxjUIZcQuhqqurl0GNuMBz9yDB+MRJdS0zbWL3
+2NMzMca4oLjjw7yniDGoBwXfO4ii8qIY91xCcDt4UMlFwe2gB1FEo9VRT3q0DlXU
+x+//r/9XfLeG9IkVxXddWnmxtKW5NN55/UQutvpAO2gEjs8bQKIR1IreQ9RxkQ2T
+tS4HCQARREQ3oDCkjaQlsKkJU2dMSEiYhNwRzBBSd6ip60hgTXIDGpZuGwypTZMW
+sRCkoBxI10uJIBO4XqhsMeIMa5QRwSxL6NKB0ECU6g7hmDLNhAhhkzCohGk/GylU
+OIdmRYXrq5q6JHvj/YL/zblzvXaEEUNAZHDEpEZ1iTm2IRa2oDomEtkRmBWBR9cK
+RUsacNejSMegqRyoet5lIvraqJefmIqUG6ZzzrfOMoEf+syvU0Q6DDPZROQQNmQi
+Sb1wkt/Nko7rKXlKKfIiyLq+BxJIkSx0I3dELMOAtmFb5UCsz7iBSLoRQUzDgmpF
+74i8stSkw6Eg2MamcBxKDIdBpHPIGSJCEsu0DIk1RXCpEYER4QZzTB05FOuEmw6I
+2lvn+SChq5g0pSyzbsqjYS4QoOnGtVWFsXhRrF/fgmjSYkUDi3/M3/bP/Xsmb+ye
+/fzuucqPjW92Hzt8eMypjtZZpSfPrT/UdqbvgoJHT4fNqhRPCv19XR/lo2Etxx/M
+XdDWuqckf3nZkrPTLtQM+HvQ/zXjX3V11h1L/uHXPkH7Z4DXn4vLQDD/y034bvvQ
+bvdO9cotg68unlI9MZWhM99W7bzltU9NjOoodntWz9+a6xzJPXbx6GneVLZz3Y5t
+Bf9dqTL5pJ4Ne0pWnP9U4zcOH7ts3N70jarNm9pfNt1bcWc5Pv68+d94/f2eGTMr
+H1uF895M+GvNkYKS6S3VHcVz3i+q2LaGTno4tWvpwny87Z8/b/exD26dPLjs4aAR
+B/MNrbObJ67qru9cuPzD6Lb02kMv5LOvY4Y9tA==
+=mLHQ
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/fardina143
+
+==================================================================
