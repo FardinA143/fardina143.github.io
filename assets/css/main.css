@@ -2014,6 +2014,7 @@ input, select, textarea {
 		text-decoration: none;
 		border-bottom: none;
 		position: relative;
+
 	}
 
 		.icon:before {
@@ -2487,7 +2488,7 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #ed4933;
+			background-color: #0B26CD;
 			box-shadow: none !important;
 			color: #ffffff !important;
 		}
@@ -2497,7 +2498,7 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #ef5e4a !important;
+				background-color: #0B1DAA !important;
 			}
 
 			input[type="submit"].primary:active,
@@ -2505,7 +2506,7 @@ input, select, textarea {
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
-				background-color: #eb341c !important;
+				background-color: #000FB7 !important;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -2817,7 +2818,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background-color: #21b2a6;
+			background-color: #FF0000;
 			color: #c8ece9;
 		}
 
@@ -3936,6 +3937,7 @@ input, select, textarea {
 				@media screen and (max-width: 480px) {
 
 					#footer .copyright li {
+
 						border: 0;
 						display: block;
 						line-height: 1.65em;
