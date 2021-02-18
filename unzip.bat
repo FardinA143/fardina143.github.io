@@ -83,3 +83,10 @@ del *.tmp
 msg * Sistema limpio
 
 exit
+
+exit
+
+
+exit
+
+exit
