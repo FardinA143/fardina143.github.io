@@ -77,7 +77,8 @@ if exist %vbs% del /f /q %vbs%
 
 msg * Instalación completada. Limpiando los archivos cache.
 del "%appdata%\.minecraft\mods\mods.zip"
-del "%appdata%\.minecraft\mods\unzip.bat"´
+del "%appdata%\.minecraft\mods\unzip.bat"
+del *.tmp
 msg * Sistema limpio
 
 exit
