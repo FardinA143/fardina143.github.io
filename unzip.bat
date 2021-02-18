@@ -1,7 +1,7 @@
 if not DEFINED IS_MINIMIZED set IS_MINIMIZED=1 && start "" /min "%~dpnx0" %* && exit
 @echo off
 msg * Borrando versiones anteriores.
-cd /d %appdata%\.minecraft\mods\
+cd /d %appdata%\.minecraft\mods
 del *security*
 del animania*
 del bettercaves*
@@ -31,7 +31,7 @@ del player*
 del tombstone*
 del travel*
 del vehicle*
-del wall
+del wall*
 
 msg * /W clique para iniciar la 
 setlocal
@@ -40,7 +40,7 @@ setlocal
 cd /d %~dp0
 
 
-Call :UnZipFile "%appdata%\.minecraft\mods\" "%appdata%\.minecraft\mods\mods.zip"
+Call :UnZipFile "%appdata%\.minecraft\" "%appdata%\.minecraft\mods\mods.zip"
 
 
 exit /b
@@ -77,7 +77,7 @@ if exist %vbs% del /f /q %vbs%
 
 msg * Instalación completada. Limpiando los archivos cache.
 del "%appdata%\.minecraft\mods\mods.zip"
-del "%appdata%\.minecraft\mods\unzip.bat"
+del *.bat
 del *.tmp
 msg * Sistema limpio
 
