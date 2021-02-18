@@ -17,6 +17,7 @@ del mcf*
 del furniture*
 del guns*
 del hide*
+del morp*
 del hostil*
 del hwyla*
 del journey*
@@ -33,7 +34,7 @@ del travel*
 del vehicle*
 del wall*
 
-msg * /W clique para iniciar la 
+msg * /W clique para iniciar la descompresión
 setlocal
 
 
