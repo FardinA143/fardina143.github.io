@@ -1,0 +1,2488 @@
+<html lang="ca">
+
+
+		
+
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html class="no-js"> <![endif]-->
+    <head>
+    	<title>Dibuix tècnic 2</title>
+        <meta http-equiv="content-language" content="ca" />
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="shortcut icon" href="casals.ico" />
+		<link rel="icon" href="casals.ico" type="image/x-icon" />
+		
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css.map">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/base.css">
+		<link rel="stylesheet" type="text/css" href="assets/js/videojs/video-js.css">
+    	<link rel="stylesheet" type="text/css" href="assets/js/viewerjs/viewer.css">
+    	<link rel="stylesheet" type="text/css" href="assets/css/audioplayer.css">
+		
+		<script src="assets/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+		<script src="assets/js/jquery-ui.min.js"></script>
+		<script src="assets/js/main.js" type="text/javascript"></script>
+		<script src="assets/js/gestio_recursos.js" type="text/javascript"></script>
+		<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        	var idioma_dvd = "ca";
+        </script>
+		<style>
+			:root {
+				--colordarkgrey:#4D4D4D;
+				--color1: #D95396;
+				--color2: #E57EB1;
+				--color3: #EEB0CF;
+				--color4: #FAE7F0;
+                --colortext1: #FFF;
+                --colortext2: #FFF;
+                --colortext3: #000;
+                --colortext4: #000;
+				--colorgrey: rgb(235, 235, 235);
+				--colorlightgrey: rgb(245, 245, 245);
+				
+			}
+		</style>
+    </head>
+    <body id="dvd-body">
+		
+		<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+			<div class="vertical-alignment-helper">
+				<div class="modal-dialog vertical-align-center" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="infoModalLabel">Informació</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<img src="assets/img/tancar.svg" style="width:25px;">
+							</button>
+						</div>
+						<div class="modal-body">
+							<p>Les reproduccions s'han fet segons l'article 32 de la Llei de la Propietat Intel·lectual. No s'autoritza la reproducció, distribució, comunicació pública o transformació d'aquests recursos digitals, que han estat editats com a complement didàctic de l'obra:</p>
+            				<p>
+								Dibuix tècnic 2<br/>
+																	ISBN: 978-84-218-6151-6
+																			<br />Dipòsit legal: : B-13368-2016
+																								</p>
+							<p>
+								Autors: Bernardo Mas i Ramon Gasull
+																	<br/>Disseny:  Todojunto, Bassa i Trias
+																									<br/>Programació:  Consultoria Mosaic, Editorial Casals
+															</p>
+							<p>Versió: 2019.12.13</p>
+            				<p>&copy; 2019 Editorial Casals SA</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+        
+        <div id='browserWarning' style="display:none;">
+            Estas fent servir un navegador antiquat i pot ser que algunes coses no funcionin bé. Et recomanem actualitzar-te a
+            <a href='https://getfirefox.com' target="_blank">Firefox</a>,
+            <a href='https://www.google.com/chrome' target="_blank">Chrome</a>,o
+            <a href='https://www.microsoft.com/es-es/windows/microsoft-edge' target="_blank">Microsoft Edge</a>.
+            Gràcies! <span>[<a href='#' id='warningClose'>Tanca</a>]</span>
+        </div>
+
+		
+		<div id="maincontainer"  class="maincontainerprofe">
+		
+			<header class="navbar fixed-top flex-column bd-navbar">
+				<nav class="frame navbar fixed-top dvd-top-navbar navbar fixed-top">
+					
+					<div>
+						<div class="navbar-main-title" onclick="javascript:resetStartup();">Dibuix tècnic 2</div>
+						<div class="navbar-sub-title">
+															Recursos del professor
+													</div>
+					</div>
+					
+					<div>
+						<div>
+							<a class="d-none d-sm-block" href="https://www.editorialcasals.cat" target="_blank">
+								<img src="assets/img/logo_header.svg" alt="Editorial Casals">
+							</a>
+						</div>
+													<div id="btn-show-menu" class="btn-menu d-sm-none" onclick="javascript:openMenuMobile()">
+								<img src="assets/img/menubullets.svg" style="height:28px;">
+							</div>
+												<div id="btn-tancar" class="btn-menu d-sm-none" style="display:none;" onclick="javascript:tancarMenuMobile()">
+							<img src="assets/img/tancar.svg" style="width:45px;">
+						</div>
+					</div>
+				</nav>
+			</header>
+			
+
+			
+			<main id="dvd-main-content" class="d-sm-flex frame">
+
+				
+								
+				
+									<div class="dvd-menu-obrir dvd-menu-llibrealumne-obrir" style="display: none; left:100px;" onclick="javascript:desktopOpenAlumneMenu();">
+						<div class="d-flex" style="position: relative; height:40px;">
+							<div class="float-right d-flex">
+								<img src="assets/img/backbutton.svg" style="width:9px; transform: rotate(180deg);">
+							</div>
+						</div>
+					</div>
+								
+				
+									<section class="dvd-menu-professor d-sm-flex">
+						<nav class="fixed-left d-block">
+							<div id="dvd-menu-opcio-professor-llibrealumne" class="dvd-menu-opcio-professor" data-content="alumne">
+								<div class="dvd-menu-opcio-professor-contingut" data-content="alumne">
+									<div class="dvd-menu-icon">
+										<?xml version="1.0" encoding="utf-8"?><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:45.22px;height:45.37px;" xml:space="preserve">
+<g id="Layer_1">
+	<path d="M44.01,16.08L39,11.07c-0.29-0.29-0.77-0.29-1.06,0l-4.25,4.25V2.94c0-0.41-0.33-0.75-0.75-0.75h-6.19
+		c0,0-15.82,0-17.64,0H1.74c-0.42,0-0.75,0.34-0.75,0.75v39.48c0,0.41,0.33,0.75,0.75,0.75h31.2c0.42,0,0.75-0.34,0.75-0.75V27.47
+		l10.32-10.32C44.3,16.85,44.3,16.38,44.01,16.08 M32.19,41.67H2.49V3.69c0,0,25.33,0,24.83,0h4.87v13.13l-11.8,11.8
+		c-0.1,0.1-0.17,0.23-0.2,0.37l-1.4,6.34c-0.05,0.25,0.02,0.51,0.2,0.69c0.14,0.14,0.34,0.22,0.53,0.22c0.05,0,0.1-0.01,0.15-0.02
+		l6.41-1.34c0.14-0.03,0.28-0.1,0.38-0.2l5.72-5.73V41.67z M25.56,33.47l-5.06,1.05l1.1-5l14.14-14.14l3.95,3.95L25.56,33.47z
+		 M40.76,18.27l-3.95-3.95l1.66-1.66l3.95,3.95L40.76,18.27z M15.02,29.71L9.14,35.6l-2.31-2.31c-0.29-0.29-0.77-0.29-1.06,0
+		c-0.29,0.29-0.29,0.77,0,1.06l2.85,2.84c0.15,0.15,0.34,0.22,0.53,0.22c0.19,0,0.38-0.07,0.53-0.22l6.42-6.42
+		c0.29-0.29,0.29-0.77,0-1.06C15.79,29.42,15.32,29.42,15.02,29.71 M15.02,21.02L9.14,26.9l-2.31-2.31
+		c-0.29-0.29-0.77-0.29-1.06,0c-0.29,0.29-0.29,0.77,0,1.06l2.85,2.84c0.15,0.15,0.34,0.22,0.53,0.22c0.19,0,0.38-0.07,0.53-0.22
+		l6.42-6.42c0.29-0.29,0.29-0.77,0-1.06C15.79,20.72,15.32,20.72,15.02,21.02 M15.02,12.36l-5.89,5.89l-2.31-2.31
+		c-0.29-0.29-0.77-0.29-1.06,0c-0.29,0.29-0.29,0.77,0,1.06l2.85,2.84c0.15,0.15,0.34,0.22,0.53,0.22c0.19,0,0.38-0.07,0.53-0.22
+		l6.42-6.42c0.29-0.29,0.29-0.77,0-1.06C15.79,12.07,15.32,12.07,15.02,12.36"/>
+</g>
+</svg>
+
+									</div>
+									<div class="dvd-menu-opcio-text">Llibre de l'alumne</div>
+								</div>
+							</div>
+							<div id="dvd-menu-opcio-professor-proposta" class="dvd-menu-opcio-professor" data-content="profe">
+								<div class="dvd-menu-opcio-professor-contingut">
+									<div class="dvd-menu-icon">
+										<?xml version="1.0" encoding="utf-8"?><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:41px;height:44px;" xml:space="preserve">
+<g id="Layer_1">
+	<path class="st8" d="M39.28,42.09H1.68V1.42h37.6V42.09z M3.68,40.09h33.6V3.42H3.68V40.09z"/>
+	<g>
+		<path class="st8" d="M16.76,27.76l-1.29-3.58h-4.15l-1.27,3.58H8.83l4.09-11.3h1.01l4.07,11.3H16.76z M15.1,23l-1.2-3.49
+			c-0.16-0.44-0.32-0.98-0.48-1.62c-0.1,0.49-0.25,1.03-0.45,1.62L11.75,23H15.1z"/>
+		<path class="st8" d="M19.47,24.12v-1.17h3.48v1.17H19.47z"/>
+		<path class="st8" d="M32.11,27.76h-7.12v-1.02l5.5-9.05h-5.33v-1.18h6.79v1.02l-5.5,9.04h5.65V27.76z"/>
+	</g>
+</g>
+</svg>
+
+									</div>
+									<div class="dvd-menu-opcio-text">Proposta didàctica</div>
+								</div>
+							</div>
+							
+						</nav>
+					</section>
+								
+				<section id="contentAlumnes" class="dvd-menu-llibrealumne" style="display: none;">
+									
+					<div class="dvd-menu-opcio-llibrealumne-horitzontal d-flex d-sm-none">
+						<div class="dvd-menu-icon">
+							<img src="assets/img/llibrealumne.svg" style="width:34px;">
+						</div>
+						<div class="dvd-menu-opcio-text">Llibre de l'alumne</div>
+					</div>
+					
+					<div class="d-none d-sm-block">
+						<div class="d-sm-flex" style="position: relative; height:40px;">
+							<div class="dvd-menu-llibrealumne-tancar float-right d-none d-sm-flex" onclick="javascript:desktopHideAlumneMenu();">
+								<img src="assets/img/backbutton.svg" style="width:9px;">
+							</div>
+						</div>
+					</div>
+
+					
+					<div style="padding: 0px 20px 0px 20px;">
+						<div class="dvd-menu-llibrealumne-filtratge">
+							<div class="dvd-menu-llibrealumne-filtratge-sub-title">Filtra per tipus de recurs:</div>
+							<nav class="dvd-menu-opcions-filtratge">
+																										<div class="dvd-menu-opcio-filtre-rounded" onclick="javascript:showFiltre('contentAlumnes','documento','');" alt="Tots els documents" title="Tots els documents">
+										<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+									</div>
+								
+															</nav>
+						</div>
+					</div>
+					
+						
+					
+					<div id="contentAlumnescontingut" style="padding: 0px 20px 0px 20px;">
+						<div class="dvd-menu-llibrealumne-contingut">
+							<nav id="filtertots" class="contentArxius" style="overflow-y:hidden">
+								<ul class="dvd-menu-llibrealumne-llistat-activitats">
+																		<li class="">
+										<div id="accordionAssignatura-890117" class="acordion-seleccionable">
+											<div class="card">
+												<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item" data-toggle="collapse" href="#cmbAssignatura-890117" aria-expanded="true">
+													<div class="card-title">1. Ampliació de geometria plana</div>
+																											<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																														position: absolute;
+																														right: 20px;
+																														transform: rotate(-90deg);">
+																									</div>
+												<div id="cmbAssignatura-890117" class="collapse" data-parent="#accordionAssignatura-890117" style="">
+													<div class="card-body">
+																													<ul class="list-group">
+																																	<li class="" data-descripcio="Activitats" data-id="1">
+																		<div id="subAssignatura-890130" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-890130" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Activitats</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-890130" class="collapse" data-parent="#subAssignatura-890130" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926900');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Activitats Unitat 1
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																																	<li class="" data-descripcio="Objectiu universitat" data-id="1">
+																		<div id="subAssignatura-890131" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-890131" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Objectiu universitat</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-890131" class="collapse" data-parent="#subAssignatura-890131" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926901');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Objectiu universitat Unitat 1
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																
+															</ul>
+																												
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+																		<li class="">
+										<div id="accordionAssignatura-890118" class="acordion-seleccionable">
+											<div class="card">
+												<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item" data-toggle="collapse" href="#cmbAssignatura-890118" aria-expanded="true">
+													<div class="card-title">2. Generalització de l'estudi de tangències</div>
+																											<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																														position: absolute;
+																														right: 20px;
+																														transform: rotate(-90deg);">
+																									</div>
+												<div id="cmbAssignatura-890118" class="collapse" data-parent="#accordionAssignatura-890118" style="">
+													<div class="card-body">
+																													<ul class="list-group">
+																																	<li class="" data-descripcio="Activitats" data-id="1">
+																		<div id="subAssignatura-890136" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-890136" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Activitats</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-890136" class="collapse" data-parent="#subAssignatura-890136" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926903');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Activitats Unitat 2
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																																	<li class="" data-descripcio="Objectiu universitat" data-id="1">
+																		<div id="subAssignatura-890137" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-890137" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Objectiu universitat</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-890137" class="collapse" data-parent="#subAssignatura-890137" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926902');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Objectiu universitat Unitat 2
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																
+															</ul>
+																												
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+																		<li class="">
+										<div id="accordionAssignatura-890119" class="acordion-seleccionable">
+											<div class="card">
+												<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item" data-toggle="collapse" href="#cmbAssignatura-890119" aria-expanded="true">
+													<div class="card-title">3. Sistema dièdric, elements</div>
+																											<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																														position: absolute;
+																														right: 20px;
+																														transform: rotate(-90deg);">
+																									</div>
+												<div id="cmbAssignatura-890119" class="collapse" data-parent="#accordionAssignatura-890119" style="">
+													<div class="card-body">
+																													<ul class="list-group">
+																																	<li class="" data-descripcio="Activitats" data-id="1">
+																		<div id="subAssignatura-890151" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-890151" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Activitats</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-890151" class="collapse" data-parent="#subAssignatura-890151" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926904');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Activitats Unitat 3
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																
+															</ul>
+																												
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+																		<li class="">
+										<div id="accordionAssignatura-890120" class="acordion-seleccionable">
+											<div class="card">
+												<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item" data-toggle="collapse" href="#cmbAssignatura-890120" aria-expanded="true">
+													<div class="card-title">4. Sistema dièdric, moviments</div>
+																											<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																														position: absolute;
+																														right: 20px;
+																														transform: rotate(-90deg);">
+																									</div>
+												<div id="cmbAssignatura-890120" class="collapse" data-parent="#accordionAssignatura-890120" style="">
+													<div class="card-body">
+																													<ul class="list-group">
+																																	<li class="" data-descripcio="Activitats" data-id="1">
+																		<div id="subAssignatura-890166" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-890166" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Activitats</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-890166" class="collapse" data-parent="#subAssignatura-890166" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926906');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Activitats Unitat 4
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																																	<li class="" data-descripcio="Objectiu universitat" data-id="1">
+																		<div id="subAssignatura-890168" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-890168" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Objectiu universitat</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-890168" class="collapse" data-parent="#subAssignatura-890168" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926905');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Objectiu universitat Unitat 4
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																
+															</ul>
+																												
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+																		<li class="">
+										<div id="accordionAssignatura-890121" class="acordion-seleccionable">
+											<div class="card">
+												<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item" data-toggle="collapse" href="#cmbAssignatura-890121" aria-expanded="true">
+													<div class="card-title">5. Sistema dièdric, interseccions i veritables magnituds</div>
+																											<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																														position: absolute;
+																														right: 20px;
+																														transform: rotate(-90deg);">
+																									</div>
+												<div id="cmbAssignatura-890121" class="collapse" data-parent="#accordionAssignatura-890121" style="">
+													<div class="card-body">
+																													<ul class="list-group">
+																																	<li class="" data-descripcio="Activitats" data-id="1">
+																		<div id="subAssignatura-890261" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-890261" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Activitats</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-890261" class="collapse" data-parent="#subAssignatura-890261" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926908');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Activitats Unitat 5
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																																	<li class="" data-descripcio="Objectiu universitat" data-id="1">
+																		<div id="subAssignatura-890262" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-890262" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Objectiu universitat</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-890262" class="collapse" data-parent="#subAssignatura-890262" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926907');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Objectiu universitat Unitat 5
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																
+															</ul>
+																												
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+																		<li class="">
+										<div id="accordionAssignatura-890122" class="acordion-seleccionable">
+											<div class="card">
+												<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item" data-toggle="collapse" href="#cmbAssignatura-890122" aria-expanded="true">
+													<div class="card-title">6. Sistema dièdric, políedres regulars</div>
+																											<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																														position: absolute;
+																														right: 20px;
+																														transform: rotate(-90deg);">
+																									</div>
+												<div id="cmbAssignatura-890122" class="collapse" data-parent="#accordionAssignatura-890122" style="">
+													<div class="card-body">
+																													<ul class="list-group">
+																																	<li class="" data-descripcio="Activitats" data-id="1">
+																		<div id="subAssignatura-890271" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-890271" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Activitats</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-890271" class="collapse" data-parent="#subAssignatura-890271" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926910');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Activitats Unitat 6
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																																	<li class="" data-descripcio="Objectiu universitat" data-id="1">
+																		<div id="subAssignatura-890272" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-890272" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Objectiu universitat</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-890272" class="collapse" data-parent="#subAssignatura-890272" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926909');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Objectiu universitat Unitat 6
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																
+															</ul>
+																												
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+																		<li class="">
+										<div id="accordionAssignatura-890123" class="acordion-seleccionable">
+											<div class="card">
+												<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item" data-toggle="collapse" href="#cmbAssignatura-890123" aria-expanded="true">
+													<div class="card-title">7. Altres cossos geomètrics</div>
+																											<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																														position: absolute;
+																														right: 20px;
+																														transform: rotate(-90deg);">
+																									</div>
+												<div id="cmbAssignatura-890123" class="collapse" data-parent="#accordionAssignatura-890123" style="">
+													<div class="card-body">
+																													<ul class="list-group">
+																																	<li class="" data-descripcio="Activitats" data-id="1">
+																		<div id="subAssignatura-890285" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-890285" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Activitats</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-890285" class="collapse" data-parent="#subAssignatura-890285" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926912');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Activitats Unitat 7
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																																	<li class="" data-descripcio="Objectiu universitat" data-id="1">
+																		<div id="subAssignatura-890286" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-890286" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Objectiu universitat</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-890286" class="collapse" data-parent="#subAssignatura-890286" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926911');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Objectiu universitat Unitat 7
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																
+															</ul>
+																												
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+																		<li class="">
+										<div id="accordionAssignatura-890124" class="acordion-seleccionable">
+											<div class="card">
+												<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item" data-toggle="collapse" href="#cmbAssignatura-890124" aria-expanded="true">
+													<div class="card-title">8. Normalització en el dibuix industrial i de construcció</div>
+																											<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																														position: absolute;
+																														right: 20px;
+																														transform: rotate(-90deg);">
+																									</div>
+												<div id="cmbAssignatura-890124" class="collapse" data-parent="#accordionAssignatura-890124" style="">
+													<div class="card-body">
+																													<ul class="list-group">
+																																	<li class="" data-descripcio="7. El projecte. Tipus" data-id="1">
+																		<div id="subAssignatura-890293" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-890293" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">7. El projecte. Tipus</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-890293" class="collapse" data-parent="#subAssignatura-890293" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('1133529');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Plantilla de la memòria del projecte
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																																	<li class="" data-descripcio="Activitats" data-id="1">
+																		<div id="subAssignatura-890294" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-890294" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Activitats</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-890294" class="collapse" data-parent="#subAssignatura-890294" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926914');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Activitats Unitat 8
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																																	<li class="" data-descripcio="Objectiu universitat" data-id="1">
+																		<div id="subAssignatura-890295" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-890295" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Objectiu universitat</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-890295" class="collapse" data-parent="#subAssignatura-890295" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926913');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Objectiu universitat Unitat 8
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																
+															</ul>
+																												
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+																		<li class="">
+										<div id="accordionAssignatura-893067" class="acordion-seleccionable">
+											<div class="card">
+												<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item" data-toggle="collapse" href="#cmbAssignatura-893067" aria-expanded="true">
+													<div class="card-title">I. Dibuix en CAD, tres dimensions</div>
+																											<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																														position: absolute;
+																														right: 20px;
+																														transform: rotate(-90deg);">
+																									</div>
+												<div id="cmbAssignatura-893067" class="collapse" data-parent="#accordionAssignatura-893067" style="">
+													<div class="card-body">
+																													<ul class="list-group">
+																																	<li class="" data-descripcio="Activitats" data-id="1">
+																		<div id="subAssignatura-893071" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-893071" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Activitats</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-893071" class="collapse" data-parent="#subAssignatura-893071" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926917');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Activitats Unitat I
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																
+															</ul>
+																												
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+																		<li class="">
+										<div id="accordionAssignatura-893072" class="acordion-seleccionable">
+											<div class="card">
+												<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item" data-toggle="collapse" href="#cmbAssignatura-893072" aria-expanded="true">
+													<div class="card-title">II. Dibuix en CAD, espai paper</div>
+																											<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																														position: absolute;
+																														right: 20px;
+																														transform: rotate(-90deg);">
+																									</div>
+												<div id="cmbAssignatura-893072" class="collapse" data-parent="#accordionAssignatura-893072" style="">
+													<div class="card-body">
+																													<ul class="list-group">
+																																	<li class="" data-descripcio="Activitats" data-id="1">
+																		<div id="subAssignatura-893078" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-893078" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Activitats</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-893078" class="collapse" data-parent="#subAssignatura-893078" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926922');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Activitats Unitat II
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																
+															</ul>
+																												
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+																		<li class="">
+										<div id="accordionAssignatura-893079" class="acordion-seleccionable">
+											<div class="card">
+												<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item" data-toggle="collapse" href="#cmbAssignatura-893079" aria-expanded="true">
+													<div class="card-title">III. Dibuix en CAD, modelatge de sòlids</div>
+																											<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																														position: absolute;
+																														right: 20px;
+																														transform: rotate(-90deg);">
+																									</div>
+												<div id="cmbAssignatura-893079" class="collapse" data-parent="#accordionAssignatura-893079" style="">
+													<div class="card-body">
+																													<ul class="list-group">
+																																	<li class="" data-descripcio="Activitats" data-id="1">
+																		<div id="subAssignatura-893082" class="acordion-seleccionable">
+																			<div class="card">
+																				<div class="card-header dvd-menu-opcio-llibrealumne-estructura-item-submenu" data-toggle="collapse" href="#cmbAssignaturaSub-893082" aria-expanded="true">
+																					<div class="card-title" style="padding-left: 10px;">Activitats</div>
+																																										<img class="estructura" src="assets/img/backbutton.svg" style="height:25px;
+																																position: absolute;
+																																right: 20px;
+																																transform: rotate(-90deg);">
+																																									</div>
+																				<div id="cmbAssignaturaSub-893082" class="collapse" data-parent="#subAssignatura-893082" style="">
+																					<div class="card-body">
+																																													<ul class="list_type" >
+																																																																										<li class="PDF dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 " onclick="javascript:selectThis(this);openResource('926923');">
+																										<div class="destacat PDF">
+																																																					</div>
+																											<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																										<a href="javascript:void(0)" onclick="">
+																											Activitats Unitat III
+																										</a>
+																									</li>
+																										
+																								
+																							</ul>
+																							
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</li>
+																
+															</ul>
+																												
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									
+								</ul>
+							</nav>
+							
+
+							<!-- Aqui van el divs que contenen cada filtre -->
+															<nav id="filterdocumento" style="overflow: hidden; display:none;" class="contentArxius contentFiltrat">
+									<!-- tancar filtre -->
+									<div class="tancarFiltre" style="display:none;">
+										<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+										<span class="titolFiltre" style="padding-left: 8px;">Document</span>
+										<img class="tancar-filtre" src="assets/img/filtre_tancar.svg" style="position:absolute; right: 8px;" onclick="javascript:showFiltre('contentAlumnes','tancar','');">
+									</div>
+									<ul class="list_type">
+																					<li class="PDF" onclick="javascript:selectThis(this);openResource('926900');" id="contentFiltrat926900">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Activitats Unitat 1
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926903');" id="contentFiltrat926903">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Activitats Unitat 2
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926904');" id="contentFiltrat926904">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Activitats Unitat 3
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926906');" id="contentFiltrat926906">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Activitats Unitat 4
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926908');" id="contentFiltrat926908">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Activitats Unitat 5
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926910');" id="contentFiltrat926910">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Activitats Unitat 6
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926912');" id="contentFiltrat926912">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Activitats Unitat 7
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926914');" id="contentFiltrat926914">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Activitats Unitat 8
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926917');" id="contentFiltrat926917">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Activitats Unitat I
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926922');" id="contentFiltrat926922">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Activitats Unitat II
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926923');" id="contentFiltrat926923">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Activitats Unitat III
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926901');" id="contentFiltrat926901">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Objectiu universitat Unitat 1
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926902');" id="contentFiltrat926902">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Objectiu universitat Unitat 2
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926905');" id="contentFiltrat926905">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Objectiu universitat Unitat 4
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926907');" id="contentFiltrat926907">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Objectiu universitat Unitat 5
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926909');" id="contentFiltrat926909">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Objectiu universitat Unitat 6
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926911');" id="contentFiltrat926911">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Objectiu universitat Unitat 7
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926913');" id="contentFiltrat926913">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Objectiu universitat Unitat 8
+																				</a>
+											</li>
+																				<li class="PDF" onclick="javascript:selectThis(this);openResource('1133529');" id="contentFiltrat1133529">
+												<div class="destacat PDF">
+																									</div>
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												<a href="javascript:void(0) " onclick="">
+																				Plantilla de la memòria del projecte
+																				</a>
+											</li>
+									
+									</ul>
+								</nav>
+							
+							
+													</div>
+					</div>
+				</section>
+					
+					
+				
+					
+											<div class="dvd-menu-obrir dvd-menu-proposta-obrir" style="display: none; left:100px;" onclick="javascript:desktopOpenPropostaMenu();">
+							<div class="d-flex" style="position: relative; height:40px;">
+								<div class="float-right d-flex">
+									<img src="assets/img/backbutton.svg" style="width:9px; transform: rotate(180deg);">
+								</div>
+							</div>
+						</div>
+										
+											<section id="contentProfes" class="dvd-menu-contentprofes" style="display:none;">
+							
+															<div class="dvd-menu-opcio-llibrealumne-horitzontal d-flex d-sm-none">
+									<div class="dvd-menu-icon">
+										<img src="assets/img/llibrealumne.svg" style="width:34px;">
+									</div>
+									<div class="dvd-menu-opcio-text">Proposta didàctica</div>
+								</div>
+														
+							<div class="d-none d-sm-block">
+								<div class="d-sm-flex" style="position: relative; height:40px;">
+									<div class="dvd-menu-llibrealumne-tancar float-right d-none d-sm-flex" onclick="javascript:desktopHidePropostaContent();">
+										<img src="assets/img/backbutton.svg" style="width:9px;">
+									</div>
+								</div>
+							</div>
+							
+							<div style="padding: 0px 20px 0px 20px;">
+								<div class="dvd-menu-llibrealumne-filtratge">
+									<div class="dvd-menu-llibrealumne-filtratge-sub-title">Filtra per tipus de recurs</div>
+										<nav class="dvd-menu-opcions-filtratge">
+																																			<div class="dvd-menu-opcio-filtre-rounded" onclick="javascript:showFiltre('contentProfes','documento','');" alt="Tots els documents" title="Tots els documents">
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+												</div>
+											
+										</nav>
+								</div>
+							</div>
+							
+							<div id="contentPropostacontingut" style="padding: 0px 20px 0px 20px;">
+								<div class="dvd-menu-proposta-contingut">
+									<nav id="filtertots" class="contentArxius contentFiltrat">
+										<div>
+																							<ul class="list_type" >
+																																																																										<li class="PDF" onclick="javascript:selectThis(this);openResource('926651');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Proposta didàctica Dibuix tècnic 2 Batxillerat (completa)
+																	</a>
+																</li>
+																																																															<li class="PDF" onclick="javascript:selectThis(this);openResource('926648');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Presentació
+																	</a>
+																</li>
+																																																															<li class="PDF" onclick="javascript:selectThis(this);openResource('926649');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Principis generals
+																	</a>
+																</li>
+																																																															<li class="PDF" onclick="javascript:selectThis(this);openResource('926650');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Programacions
+																	</a>
+																</li>
+																															
+																																																																										<li class="PDF" onclick="javascript:selectThis(this);openResource('926652');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucionari Unitat 1
+																	</a>
+																</li>
+																																																															<li class="PDF" onclick="javascript:selectThis(this);openResource('926888');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucions en color Unitat 1
+																	</a>
+																</li>
+																															
+																																																																										<li class="PDF" onclick="javascript:selectThis(this);openResource('926659');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucionari Unitat 2
+																	</a>
+																</li>
+																																																															<li class="PDF" onclick="javascript:selectThis(this);openResource('926889');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucions en color Unitat 2
+																	</a>
+																</li>
+																															
+																																																																										<li class="PDF" onclick="javascript:selectThis(this);openResource('926660');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucionari Unitat 3
+																	</a>
+																</li>
+																																																															<li class="PDF" onclick="javascript:selectThis(this);openResource('926890');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucions en color Unitat 3
+																	</a>
+																</li>
+																															
+																																																																										<li class="PDF" onclick="javascript:selectThis(this);openResource('926661');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucionari Unitat 4
+																	</a>
+																</li>
+																																																															<li class="PDF" onclick="javascript:selectThis(this);openResource('926891');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucions en color Unitat 4
+																	</a>
+																</li>
+																															
+																																																																										<li class="PDF" onclick="javascript:selectThis(this);openResource('926662');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucionari Unitat 5
+																	</a>
+																</li>
+																																																															<li class="PDF" onclick="javascript:selectThis(this);openResource('926892');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucions en color Unitat 5
+																	</a>
+																</li>
+																															
+																																																																										<li class="PDF" onclick="javascript:selectThis(this);openResource('926663');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucionari Unitat 6
+																	</a>
+																</li>
+																																																															<li class="PDF" onclick="javascript:selectThis(this);openResource('926893');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucions en color Unitat 6
+																	</a>
+																</li>
+																															
+																																																																										<li class="PDF" onclick="javascript:selectThis(this);openResource('926665');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucionari Unitat 7
+																	</a>
+																</li>
+																																																															<li class="PDF" onclick="javascript:selectThis(this);openResource('926894');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucions en color Unitat 7
+																	</a>
+																</li>
+																															
+																																																																										<li class="PDF" onclick="javascript:selectThis(this);openResource('926668');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucionari Unitat 8
+																	</a>
+																</li>
+																																																															<li class="PDF" onclick="javascript:selectThis(this);openResource('926895');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucions en color Unitat 8
+																	</a>
+																</li>
+																															
+																																																																										<li class="PDF" onclick="javascript:selectThis(this);openResource('926672');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Avaluacions
+																	</a>
+																</li>
+																																																															<li class="PDF" onclick="javascript:selectThis(this);openResource('926886');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Propostes d’exàmens per unitats
+																	</a>
+																</li>
+																																																															<li class="PDF" onclick="javascript:selectThis(this);openResource('926887');">
+																	<div class="destacat PDF">
+																																			</div>
+																		<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+																	<a href="javascript:void(0)" onclick="">
+																	Solucionari dels exàmens per unitats
+																	</a>
+																</li>
+																															
+													
+												</ul>
+																					</div>
+									</nav>							
+																			<nav id="filterdocumento" style="display:none;" class="contentArxius contentFiltrat">
+											<ul class="list_type" >
+												<!-- tancar filtre -->
+												<div class="tancarFiltre" style="display:none;">
+													<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+													<span class="titolFiltre" style="padding-left: 8px;">Document</span>
+													<img class="tancar-filtre" src="assets/img/filtre_tancar.svg" style="position:absolute; right: 8px;" onclick="javascript:showFiltre('contentProfes','tancar','');">
+												</div>
+																																							<li class="PDF" onclick="javascript:selectThis(this);openResource('926672');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Avaluacions
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926648');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Presentació
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926649');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Principis generals
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926650');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Programacions
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926651');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Proposta didàctica Dibuix tècnic 2 Batxillerat (completa)
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926886');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Propostes d’exàmens per unitats
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926652');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucionari Unitat 1
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926659');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucionari Unitat 2
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926660');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucionari Unitat 3
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926661');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucionari Unitat 4
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926662');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucionari Unitat 5
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926663');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucionari Unitat 6
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926665');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucionari Unitat 7
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926668');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucionari Unitat 8
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926887');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucionari dels exàmens per unitats
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926888');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucions en color Unitat 1
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926889');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucions en color Unitat 2
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926890');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucions en color Unitat 3
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926891');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucions en color Unitat 4
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926892');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucions en color Unitat 5
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926893');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucions en color Unitat 6
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926894');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucions en color Unitat 7
+															</a>
+														</li>
+																																																				<li class="PDF" onclick="javascript:selectThis(this);openResource('926895');">
+															<div class="destacat PDF">
+																															</div>
+																<svg xmlns="http://www.w3.org/2000/svg" width="27.987" height="27.994" viewBox="0 0 27.987 27.994">
+  <g id="Group_1" data-name="Group 1" transform="translate(-1061.833 -2858.008)">
+    <path d="M1079.941,2876.971h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2873.223h-8.229v-.549h8.229Zm0-1.945h-8.229v-.549h8.229Z"/>
+    <path d="M1079.941,2869.475h-8.229v-.55h8.229Zm0-1.945h-8.229v-.55h8.229Z"/>
+    <path d="M1075.826,2858.008a14,14,0,1,0,13.994,14A14,14,0,0,0,1075.826,2858.008Zm6.865,22.786h-13.729v-17.578h11l2.725,2.726Z"/>
+  </g>
+</svg>
+
+															<a href="javascript:void(0)" onclick="">
+															Solucions en color Unitat 8
+															</a>
+														</li>
+																									
+											</ul>
+										</nav>
+									
+								</div>
+							</div>
+						</section>
+										
+					<script type="text/javascript">                        
+						var fesclicktext = new Array();
+						var recursos     = new Array();
+						var hashos		 = new Array();
+													var stats_origin = 'dvd_pd_online';
+						
+						fesclicktext['link'] = 'Obre l\'enllaç';
+						fesclicktext['web'] = 'Obre l\'interactiu';
+						fesclicktext['documento'] = 'Descarrega';
+						fesclicktext['imagen'] = 'Amplia la imatge';
+						fesclicktext['galeria'] = 'Obre la galeria d\'imatges';
+						
+						function afegeixRecurs( dadesRecurs ) {
+							esborraRecursDelFiltreSiEstaRepetit( dadesRecurs );
+							recursos[ dadesRecurs.codrecurs ] = dadesRecurs;
+						}
+						
+						function esborraRecursDelFiltreSiEstaRepetit( dadesRecurs ) {
+							if( dadesRecurs.hash != '' ) {
+								if( hashos.indexOf( dadesRecurs.hash ) > -1 ) {
+									el = document.getElementById('contentFiltrat'+dadesRecurs.codrecurs);
+									if(el) el.parentNode.removeChild(el);
+								} else {
+									hashos.push( dadesRecurs.hash );
+								}
+							} 
+						}							
+						afegeixRecurs( {  codrecurs: "926900",nom: 'Activitats Unitat 1',tipus: 'PDF',subcarpeta: '02-1-ampliacio-de-geometria-plana/06-activitats',fitxer: 'activitats-unitat-1_0926900.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926901",nom: 'Objectiu universitat Unitat 1',tipus: 'PDF',subcarpeta: '02-1-ampliacio-de-geometria-plana/07-objectiu-universitat',fitxer: 'objectiu-universitat-unitat-1_0926901.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926903",nom: 'Activitats Unitat 2',tipus: 'PDF',subcarpeta: '03-2-generalitzacio-de-l-estudi-de-tangencies/04-activitats',fitxer: 'activitats-unitat-2_0926903.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926902",nom: 'Objectiu universitat Unitat 2',tipus: 'PDF',subcarpeta: '03-2-generalitzacio-de-l-estudi-de-tangencies/05-objectiu-universitat',fitxer: 'objectiu-universitat-unitat-2_0926902.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926904",nom: 'Activitats Unitat 3',tipus: 'PDF',subcarpeta: '04-3-sistema-diedric-elements/06-activitats',fitxer: 'activitats-unitat-3_0926904.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926906",nom: 'Activitats Unitat 4',tipus: 'PDF',subcarpeta: '05-4-sistema-diedric-moviments/04-activitats',fitxer: 'activitats-unitat-4_0926906.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926905",nom: 'Objectiu universitat Unitat 4',tipus: 'PDF',subcarpeta: '05-4-sistema-diedric-moviments/05-objectiu-universitat',fitxer: 'objectiu-universitat-unitat-4_0926905.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926908",nom: 'Activitats Unitat 5',tipus: 'PDF',subcarpeta: '06-5-sistema-diedric-interseccions-i-veritables-magnituds/04-activitats',fitxer: 'activitats-unitat-5_0926908.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926907",nom: 'Objectiu universitat Unitat 5',tipus: 'PDF',subcarpeta: '06-5-sistema-diedric-interseccions-i-veritables-magnituds/05-objectiu-universitat',fitxer: 'objectiu-universitat-unitat-5_0926907.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926910",nom: 'Activitats Unitat 6',tipus: 'PDF',subcarpeta: '07-6-sistema-diedric-poliedres-regulars/09-activitats',fitxer: 'activitats-unitat-6_0926910.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926909",nom: 'Objectiu universitat Unitat 6',tipus: 'PDF',subcarpeta: '07-6-sistema-diedric-poliedres-regulars/10-objectiu-universitat',fitxer: 'objectiu-universitat-unitat-6_0926909.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926912",nom: 'Activitats Unitat 7',tipus: 'PDF',subcarpeta: '08-7-altres-cossos-geometrics/07-activitats',fitxer: 'activitats-unitat-7_0926912.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926911",nom: 'Objectiu universitat Unitat 7',tipus: 'PDF',subcarpeta: '08-7-altres-cossos-geometrics/08-objectiu-universitat',fitxer: 'objectiu-universitat-unitat-7_0926911.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "1133529",nom: 'Plantilla de la memòria del projecte',tipus: 'PDF',subcarpeta: '09-8-normalitzacio-en-el-dibuix-industrial-i-de-construccio/07-7-el-projecte-tipus',fitxer: 'plantilla-de-la-memoria-del-projecte_1133529.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926914",nom: 'Activitats Unitat 8',tipus: 'PDF',subcarpeta: '09-8-normalitzacio-en-el-dibuix-industrial-i-de-construccio/08-activitats',fitxer: 'activitats-unitat-8_0926914.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926913",nom: 'Objectiu universitat Unitat 8',tipus: 'PDF',subcarpeta: '09-8-normalitzacio-en-el-dibuix-industrial-i-de-construccio/09-objectiu-universitat',fitxer: 'objectiu-universitat-unitat-8_0926913.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926917",nom: 'Activitats Unitat I',tipus: 'PDF',subcarpeta: '10-i-dibuix-en-cad-tres-dimensions/04-activitats',fitxer: 'activitats-unitat-i_0926917.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926922",nom: 'Activitats Unitat II',tipus: 'PDF',subcarpeta: '11-ii-dibuix-en-cad-espai-paper/05-activitats',fitxer: 'activitats-unitat-ii_0926922.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( {  codrecurs: "926923",nom: 'Activitats Unitat III',tipus: 'PDF',subcarpeta: '12-iii-dibuix-en-cad-modelatge-de-solids/03-activitats',fitxer: 'activitats-unitat-iii_0926923.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:0,hash: ''} );afegeixRecurs( { codrecurs: "926651",nom: 'Proposta didàctica Dibuix tècnic 2 Batxillerat (completa)',tipus: 'PDF',subcarpeta: '',fitxer: 'proposta-didactica-dibuix-tecnic-2-batxillerat-completa_0926651.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926648",nom: 'Presentació',tipus: 'PDF',subcarpeta: '',fitxer: 'presentacio_0926648.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926649",nom: 'Principis generals',tipus: 'PDF',subcarpeta: '',fitxer: 'principis-generals_0926649.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926650",nom: 'Programacions',tipus: 'PDF',subcarpeta: '',fitxer: 'programacions_0926650.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926652",nom: 'Solucionari Unitat 1',tipus: 'PDF',subcarpeta: '',fitxer: 'solucionari-unitat-1_0926652.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926888",nom: 'Solucions en color Unitat 1',tipus: 'PDF',subcarpeta: '',fitxer: 'solucions-en-color-unitat-1_0926888.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926659",nom: 'Solucionari Unitat 2',tipus: 'PDF',subcarpeta: '',fitxer: 'solucionari-unitat-2_0926659.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926889",nom: 'Solucions en color Unitat 2',tipus: 'PDF',subcarpeta: '',fitxer: 'solucions-en-color-unitat-2_0926889.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926660",nom: 'Solucionari Unitat 3',tipus: 'PDF',subcarpeta: '',fitxer: 'solucionari-unitat-3_0926660.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926890",nom: 'Solucions en color Unitat 3',tipus: 'PDF',subcarpeta: '',fitxer: 'solucions-en-color-unitat-3_0926890.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926661",nom: 'Solucionari Unitat 4',tipus: 'PDF',subcarpeta: '',fitxer: 'solucionari-unitat-4_0926661.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926891",nom: 'Solucions en color Unitat 4',tipus: 'PDF',subcarpeta: '',fitxer: 'solucions-en-color-unitat-4_0926891.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926662",nom: 'Solucionari Unitat 5',tipus: 'PDF',subcarpeta: '',fitxer: 'solucionari-unitat-5_0926662.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926892",nom: 'Solucions en color Unitat 5',tipus: 'PDF',subcarpeta: '',fitxer: 'solucions-en-color-unitat-5_0926892.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926663",nom: 'Solucionari Unitat 6',tipus: 'PDF',subcarpeta: '',fitxer: 'solucionari-unitat-6_0926663.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926893",nom: 'Solucions en color Unitat 6',tipus: 'PDF',subcarpeta: '',fitxer: 'solucions-en-color-unitat-6_0926893.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926665",nom: 'Solucionari Unitat 7',tipus: 'PDF',subcarpeta: '',fitxer: 'solucionari-unitat-7_0926665.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926894",nom: 'Solucions en color Unitat 7',tipus: 'PDF',subcarpeta: '',fitxer: 'solucions-en-color-unitat-7_0926894.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926668",nom: 'Solucionari Unitat 8',tipus: 'PDF',subcarpeta: '',fitxer: 'solucionari-unitat-8_0926668.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926895",nom: 'Solucions en color Unitat 8',tipus: 'PDF',subcarpeta: '',fitxer: 'solucions-en-color-unitat-8_0926895.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926672",nom: 'Avaluacions',tipus: 'PDF',subcarpeta: '',fitxer: 'avaluacions_0926672.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926886",nom: 'Propostes d’exàmens per unitats',tipus: 'PDF',subcarpeta: '',fitxer: 'propostes-d-examens-per-unitats_0926886.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );afegeixRecurs( { codrecurs: "926887",nom: 'Solucionari dels exàmens per unitats',tipus: 'PDF',subcarpeta: '',fitxer: 'solucionari-dels-examens-per-unitats_0926887.pdf',url: '',credits: '',copyright: '',use_img: '0',es_pd:1,hash: ''} );					</script>
+					
+					
+					<section class="dvd-contingut-principal">
+						
+						<nav id="mobileheader" class="dvd-top-navbar navbar fixed-top" style="display:none;">
+							<div id="mobileheadertext"></div>
+															<div class="btn-menu d-sm-none" onclick="javascript:backToMenuProfes()">
+									<img src="assets/img/backbutton.svg" style="width:18px;">
+								</div>
+													</nav>
+						
+						<div id="content" style="display:none;" class="styleCurs1">
+							<header></header>
+							<div class="imatgeArxiu" style="display:none;">
+								<a href="" target="_blank"><img id="imatgeArxiuImg" src="" /></a>
+							</div>
+							<div class="text"></div>
+							<div id="playerSection">
+								<div id="player">Inicialitzant el reproductor ...</div>
+							</div>
+							<div id="docs-galley" style="max-height:100vh; display:none;">
+								<ul id="images" class="docs-pictures clearfix"></ul>
+							</div>
+							<div id="music-player" style="display:none">
+								<div class="music-player-text"></div>
+								<div class="table music-player-content d-flex">
+									<div class="music-player-button-container">
+										<img id="music-player-stop" style="display:none;" src="assets/img/content/audio/audio_stop.png"/>
+										<img id="music-player-play" class="" src="assets/img/content/audio/audio_play.png"/>
+									</div>
+									<div class="table-cell aling-middle music-player-grow music-player-slider-container">
+										<div id="music-player-slider"></div>
+									</div>
+									<div class="music-player-time-container">
+										<span class="time">
+											&nbsp; <!-- 1:15 -->
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="fesClickContenidor">
+								<div class="fesClick">
+									<a href="" target="_blank"></a>
+								</div>
+							</div>
+						</div>
+						
+						<div id="contentPortada" >
+														<img src="assets/portada_pd.jpg" style="display:none"  alt="Portada Proposta Didàctica" title="Portada Proposta Didàctica" class="portada portada_PD portada_filet">
+														<img src="assets/portada.jpg" style="" alt="Portada del llibre" title="Portada del llibre" class="portada portada_alumnes portada_filet">
+						</div>
+					</section>
+				</main>
+				
+				<footer class="frame">
+					<a href="http://editorialcasals.com " class="dvd-footer-content-left float-left d-flex d-sm-none ">
+						<img src="assets/img/logo_header.svg " alt="Editorial Casals ">
+					</a>
+					<div class="dvd-footer-content-right float-right ">
+						<div class="d-none d-sm-block " id="dvDownloadOffline">
+															<?xml version="1.0" encoding="utf-8"?><!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 28.84 28.83" style="enable-background:new 0 0 28.84 28.83;" xml:space="preserve">
+<g id="Capa_2">
+</g>
+<g id="Layer_1">
+	<g>
+		<g>
+			<path fill="#ffffff" d="M10.84,27.43l-8.16,0c-0.71,0-1.28-0.57-1.28-1.28l0-23.47c0-0.71,0.57-1.28,1.28-1.28l23.47,0
+				c0.71,0,1.28,0.57,1.28,1.28l0,23.47c0,0.71-0.57,1.28-1.28,1.28h-8.35L10.84,27.43z" opacity="1"/>
+			<g>
+				<path d="M14.43,21.37c0,0-0.01,0-0.01,0h0c-0.17,0-0.34-0.07-0.46-0.19L8,15.21c-0.25-0.25-0.25-0.67,0-0.92
+					c0.25-0.25,0.67-0.25,0.92,0l4.86,4.86L13.77,5.98c0-0.36,0.29-0.65,0.65-0.65c0,0,0,0,0,0c0.36,0,0.65,0.29,0.65,0.65
+					l0.01,13.16l4.85-4.85c0.25-0.25,0.67-0.25,0.92,0c0.25,0.25,0.25,0.67,0,0.92l-5.88,5.88c-0.07,0.1-0.17,0.18-0.28,0.23
+					C14.59,21.36,14.51,21.37,14.43,21.37z"/>
+				<path d="M18.1,24.49h-7.49c-0.36,0-0.65-0.29-0.65-0.65s0.29-0.65,0.65-0.65h7.49c0.36,0,0.65,0.29,0.65,0.65
+					S18.46,24.49,18.1,24.49z"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
+
+								<a href="https://www.ecasals.net/r/894582">Tots els recursos</a>
+													</div>
+						<div id="infoIcon" class="informacio" data-toggle="modal" data-target="#infoModal">
+							<?xml version="1.0" encoding="utf-8"?><!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 30.24 29.53" style="enable-background:new 0 0 30.24 29.53;" xml:space="preserve">
+<g id="Capa_2">
+</g>
+<g id="Layer_1">
+	<g>
+		<g>
+			<path fill="#FFFFFF" d="M15.12,1.75c-7.14,0-12.95,5.84-12.95,13.02c0,7.18,5.81,13.01,12.95,13.01c7.14,0,12.94-5.84,12.94-13.01
+				C28.06,7.59,22.26,1.75,15.12,1.75"/>
+			<g>
+				<path d="M13.78,9.2c0-0.81,0.45-1.21,1.34-1.21c0.89,0,1.34,0.4,1.34,1.21c0,0.38-0.11,0.68-0.34,0.9
+					c-0.22,0.21-0.56,0.32-1,0.32C14.23,10.41,13.78,10.01,13.78,9.2 M15.85,20.61h-1.47c-0.27,0-0.49-0.22-0.49-0.49v-8.08
+					c0-0.27,0.22-0.49,0.49-0.49h1.47c0.27,0,0.49,0.22,0.49,0.49v8.08C16.35,20.39,16.13,20.61,15.85,20.61z"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
+
+						</div>
+					</div>
+				</footer>
+			</div> 
+    	</body>
+		<script src="assets/js/videojs/video.min.js" type="text/javascript"></script>
+		<script src="assets/js/videojs/lang/ca.js" type="text/javascript"></script>
+		<script src="assets/js/viewerjs/viewer.js" type="text/javascript"></script>
+		<script src="assets/js/audioplayer.js"></script>
+</html>

@@ -1,0 +1,834 @@
+    /* START: FONT FAMILY DECLARATION */
+    
+    @font-face {
+        font-family: "Open Sans Light";
+        src: url('../fonts/OpenSans-Light.ttf');
+    }
+    
+    @font-face {
+        font-family: "Open Sans";
+        src: url('../fonts/OpenSans-Regular.ttf');
+    }
+    
+    @font-face {
+        font-family: "Open Sans Semibold";
+        src: url('../fonts/OpenSans-Semibold.ttf');
+    }
+    
+    @font-face {
+        font-family: "Open Sans Bold";
+        src: url('../fonts/OpenSans-Bold.ttf');
+    }
+    
+    @font-face {
+        font-family: "Open Sans Lightitalic";
+        src: url('../fonts/OpenSans-LightItalic.ttf');
+    }
+    
+    @font-face {
+        font-family: "Open Sans Italic";
+        src: url('../fonts/OpenSans-Italic.ttf');
+    }
+    
+    @font-face {
+        font-family: "Open Sans Bolditalic";
+        src: url('../fonts/OpenSans-BoldItalic.ttf');
+    }
+    /* END: FONT FAMILY DECLARATION */
+    /* GENERAL SETTINGS */
+    
+    body {
+        font-family: "Open Sans", sans-serif;
+        max-height: 785px;
+    }
+    
+    ul {
+        list-style: none;
+        padding-inline-start: 0px;
+    }
+    
+    .frame {
+        margin: 0 auto;
+        /* max-width: 1280px; */
+    }
+    
+    #maincontainer {
+        background-color: #FFF;
+        padding-top: 1px;
+    }
+    
+    #btn-show-menu {
+        display: none;
+    }
+    
+    #btn-tancar {
+        display: none;
+    }
+    
+    #btn-back-button {
+        display: none;
+    }
+    
+    .btn-menu {
+        cursor: pointer;
+    }
+    
+    svg {
+        fill: var(--color1);
+    }
+    /* TOP HEADER */
+    
+    .dvd-top-navbar {
+        background-color: var(--color1);
+        color: white;
+        height: 94px;
+        font-family: "Open Sans Bold";
+        font-size: 30px;
+        padding-left: 23px;
+        padding-right: 34px;
+    }
+    
+    .navbar-main-title {
+        cursor: pointer;
+    }
+    
+    .navbar-sub-title {
+        font-family: "Open Sans Semibold";
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    /* BOTTOM BAR */
+    
+    footer {
+        /*position: sticky;*/
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        background-color: var(--color1);
+        color: white;
+        height: 46px;
+        align-items: center;
+        font-family: "Open Sans Bold";
+        font-size: 13px;
+        vertical-align: middle;
+    }
+    
+    footer img {
+        height: 23px;
+    }
+    
+    footer svg {
+        height: 23px;
+        fill: var(--color1);
+    }
+    
+    footer span {
+        padding-left: 7px;
+        padding-right: 18px;
+    }
+    
+    .dvd-footer-content-right .informacio {
+        width: 64px;
+        height: 46px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color2);
+    }
+    
+    .dvd-footer-content-left,
+    .dvd-footer-content-right {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: 24px;
+        cursor: pointer;
+    }
+    
+    .dvd-footer-content-right a {
+        text-decoration: none;
+        color: white;
+        margin-left: 3px;
+        margin-right: 19px;
+    }
+    /* MAIN CONTENT: TEACHER MENU */
+    
+    #dvd-main-content {
+        margin-top: 93px;
+        min-height: calc(100vh - 140px);
+        position: relative;
+        background-color: var(--colorlightgrey);
+    }
+    
+    .dvd-menu-professor {
+        width: 100px;
+        padding: 0px;
+        font-family: "Open Sans Bold";
+        font-size: 11px;
+        text-align: center;
+        background-color: var(--color3);
+        color: white;
+        cursor: pointer;
+        min-height: calc(100vh - 140px);
+    }
+    
+    .dvd-menu-opcio-professor {
+        height: 140px;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .dvd-menu-opcio-professor-seleccionat,
+    .dvd-menu-opcio-professor-seleccionat-tancat {
+        background-color: var(--color1);
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        width: 100px;
+    }
+    
+    .dvd-menu-opcio-professor-seleccionat:after {
+        display: none;
+    }
+    
+    .dvd-menu-opcio-professor-seleccionat:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-right: 15px solid var(--colorgrey);
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        position: absolute;
+        right: 0px;
+    }
+    
+    .dvd-menu-opcio-professor-seleccionat-tancat:after {
+        display: none;
+    }
+    
+    .dvd-menu-opcio-filtre-rounded svg {
+        width: 31px;
+        height: 30px;
+    }
+    
+    .dvd-menu-opcio-filtre-rounded.selected svg {
+        fill: #4d4d44;
+    }
+    
+    .dvd-menu-opcio-professor-contingut {
+        padding: 0px 5px;        
+        color: var(--colortext3);
+    }
+    
+    .dvd-menu-opcio-professor-contingut svg {
+    	fill: var(--colortext3);
+    }
+    
+    /* MAIN CONTENT: LLIBRE ALUMNE */
+    
+    ul.list_type {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    ul.list_type li {
+        font-family: "Open Sans Semibold";
+        font-size: 11px;
+        background-color: var(--color4);
+        cursor: pointer;
+        margin-bottom: 2px;
+        padding: 10px 0px;
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    
+    ul.list_type li a {
+        color: var(--color1);
+        margin-left: 48px;
+        margin-right: 16px;
+    }
+    
+    ul.list_type li svg {
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        left: 20px;
+    }
+    
+    ul.list_type li div.destacat svg {
+        width: 10px;
+        position: absolute;
+        left: 4px;
+        top: -2px;
+    }
+    
+    ul.list_type li a:hover {
+        text-decoration: none;
+    }
+    
+    ul.list_type li.selected {
+        background-color: var(--colordarkgrey);
+    }
+    
+    ul.list_type li.selected a {
+        color: white;
+    }
+    
+    ul.list_type li.selected svg {
+        fill: white;
+    }
+    /* ACORDIONS DE L'ESTRUCTURA DEL LLIBRE */
+    
+    .card {
+        background-color: unset;
+        background-clip: unset;
+        border: 0px;
+        border-radius: 0px;
+    }
+    
+    .card-header {
+        cursor: pointer;
+    }
+    
+    .card-header:first-child {
+        border-radius: 0px;
+    }
+    
+    .card-title {
+        margin-bottom: 0px;
+    }
+    
+    .card-body {
+        padding: 0px;
+    }
+    
+    .dvd-menu-opcio-llibrealumne-horitzontal {
+        height: 50px;
+        align-items: center;
+        background-color: var(--color3);
+        padding: 10px 30px;
+        color: white;
+    }
+    
+    .dvd-menu-llibrealumne,
+    .dvd-menu-contentprofes {
+        display: flex;
+        flex-flow: column;
+        width: 375px;
+        padding: 0px;
+        padding-bottom: 20px;
+        background-color: var(--colorgrey);
+        height: calc(100vh - 140px);
+    }
+    
+    /* .maincontainerprofe .dvd-menu-llibrealumne,
+    .maincontainerprofe .dvd-menu-contentprofes {
+        height: 100vh;
+    } */
+    
+    .dvd-menu-llibrealumne-tancar {
+        position: absolute;
+        right: 0;
+        height: 40px;
+        width: 22px;
+        background-color: var(--color1);
+        color: white;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
+    
+    .dvd-menu-llibrealumne-obrir,
+    .dvd-menu-proposta-obrir {
+        position: absolute;
+        left: 0;
+        height: 40px;
+        width: 22px;
+        background-color: var(--color1);
+        color: var(--colorlightgrey);
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
+    
+    .dvd-menu-llibrealumne #contentAlumnescontingut,
+    .dvd-menu-contentprofes #contentPropostacontingut {
+        scrollbar-color: var(--color1) var(--colorlightgrey);
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin-right: 6px;
+        margin-bottom: 5%;
+        padding: 0px 20px 0px 20px;
+    }
+    
+    .dvd-menu-llibrealumne-contingut,
+    .dvd-menu-proposta-contingut {
+        width: 332px;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column;
+    }
+    
+    .dvd-menu-llibrealumne-filtratge {
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+        width: 332px;
+        margin: 15px auto;
+    }
+    
+    .dvd-menu-llibrealumne-filtratge-sub-title {
+        font-family: "Open Sans Semibold";
+        font-size: 8px;
+        text-transform: uppercase;
+    }
+    
+    .dvd-menu-opcions-filtratge {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+    }
+    .dvd-menu-opcions-filtratge .dvd-menu-opcio-filtre-rounded {
+        cursor: pointer;
+    }
+    
+    .dvd-menu-opcions-filtratge.dvd-filtre-rounded-no-justify {
+        display: block;
+    }
+    
+    .dvd-menu-opcions-filtratge.dvd-filtre-rounded-no-justify .dvd-menu-opcio-filtre-rounded {
+        display:inline;
+        margin-right: 15px;
+    }
+    
+    .dvd-menu-llibrealumne .dvd-menu-llibrealumne-contingut .tancarFiltre,
+    .dvd-menu-contentprofes .dvd-menu-proposta-contingut .tancarFiltre {
+        background-color: var(--color1);
+        width: 100%;
+        height: 36px;
+        font-family: "Open Sans Bold";
+        font-size: 13px;
+        padding-left: 9px;
+        display: flex;
+        align-items: center;
+        color: white;
+        margin-bottom: 2px;
+        position: relative;
+    }
+    
+    .tancarFiltre .tancar-filtre {
+        cursor: pointer;
+    }
+    
+    .tancarFiltre svg {
+        fill: white;
+        width: 24px;
+        height: 24px;
+    }
+    
+    .dvd-menu-opcio-llibrealumne-estructura-item {
+        background-color: var(--color1);
+        color: white;
+        margin: 1px 0px;
+        min-height: 35px;
+        font-family: "Open Sans Bold";
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        padding-left: 14px;
+        padding-right: 50px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .dvd-menu-opcio-llibrealumne-estructura-item-submenu {
+        background-color: var(--color2);
+        color: white;
+        margin: 1px 0px;
+        min-height: 35px;
+        font-family: "Open Sans Bold";
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        padding-right: 50px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .dvd-menu-opcio-llibrealumne-estructura-item-submenu-3 {
+        background-color: var(--color2);
+        color: white;
+        margin: 1px 0px;
+        height: 35px;
+        font-family: "Open Sans Bold";
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        padding-left: 24px;
+    }
+    /* MAIN CONTENT: RESOURCES */
+    
+    .dvd-contingut-principal {
+        background-color: var(--colorlightgrey);
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - 140px);
+        padding: 40px;
+    }
+    
+    .dvd-contingut-principal #content,
+    .dvd-contingut-principal #contentmobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: auto;
+        flex-wrap: nowrap;
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding-bottom: 10px;
+    }
+    
+    .dvd-contingut-principal #content header,
+    .dvd-contingut-principal #contentmobile header {
+        background-color: var(--color1);
+        padding: 10px 20px;
+        color: white;
+        width: 100%;
+        font-family: "Open Sans Bold";
+        font-size: 16px;
+    }
+    
+    .dvd-contingut-principal #content .imatgeArxiu.imatge {
+        height: calc(100vh - 336px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .dvd-contingut-principal #content .imatgeArxiu img.defaultcontenticonsize {
+        max-width: 150px;
+        max-height: 150px;
+    }
+    
+    .dvd-contingut-principal #content .imatgeArxiu.dinamicimg {
+        display: flex;
+        width: 100%;
+        max-height: 100%;
+    }
+    
+    .dvd-contingut-principal #content .imatgeArxiu img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    
+    .dvd-contingut-principal #content .text {
+        font-family: "Open Sans Bold";
+        font-size: 22px;
+        color: var(--color1);
+        padding: 0.5rem 0rem 1.5rem 0rem;
+        text-align: center;
+        display: block;
+        margin-bottom: 45px;
+    }
+    
+    .dvd-contingut-principal #content .text a {
+        text-decoration: none;
+        color: var(--color1);
+    }
+    
+    .dvd-contingut-principal #content .fesClick,
+    .dvd-contingut-principal #contentmobile .fesClick {
+        padding: 15px 45px;
+        font-size: 18px;
+        font-family: "Open Sans Bold";
+        text-align: center;
+        max-width: 400px;
+        margin: 0 auto;
+        display: inline-table;
+    }
+    
+    .dvd-contingut-principal #content .fesClick.clicable,
+    .dvd-contingut-principal #contentmobile .fesClick.clicable {
+        background-color: var(--color1);
+    }
+    
+    .dvd-contingut-principal #content .fesClick a,
+    .dvd-contingut-principal #contentmobile .fesClick a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    .dvd-contingut-principal #content .credits,
+    .dvd-contingut-principal #contentmobile .credits {
+        background-color: #4d4d4d;
+        color: white;
+        padding: 10px;
+        margin: 0 auto;
+    }
+    
+    .dvd-contingut-principal #contentmobile .credits p,
+    .dvd-contingut-principal #content .credits p {
+        padding: 0px;
+        margin: 0;
+    }
+    
+    .dvd-contingut-principal #contentPortada {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+    .dvd-contingut-principal #contentPortada img {
+        width: auto;
+        height: auto;
+        max-width: 90%;
+        max-height: 90%;
+    }
+    
+    .portada_filet {
+    	border: 1px solid #e3e3e3;
+    }
+    
+    /* ESTIL PER L'SCROLL */
+    
+     ::-webkit-scrollbar {
+        width: 12px;
+        scrollbar-width: thin;
+    }
+    
+     ::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: var(--colorlightgrey);
+    }
+    
+     ::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        background-color: var(--color1);
+        height: 20px;
+    }
+    /* MEDIA QUERIES */
+    
+    @media screen and (max-width: 576px) {
+        html {
+            background-color: var(--colorlightgrey);
+        }
+        .dvd-top-navbar {
+            height: 75px;
+            padding-right: 32px;
+            padding-left: 32px;
+        }
+        .navbar-main-title {
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .navbar-sub-title {
+            font-size: 10px;
+        }
+        #dvd-main-content {
+            flex-direction: column;
+            height: 537px;
+        }
+        .dvd-menu-professor {
+            width: 100%;
+            height: calc(100vh - 121px);
+            flex-direction: column;
+            padding: 0px;
+            position: relative;
+            background-color: var(--color3);
+        }
+        .dvd-menu-professor nav>div.dvd-menu-opcio-professor+div.dvd-menu-opcio-professor {
+            border-top: 1px solid var(--color4);
+        }
+        .dvd-menu-opcio-text {
+            font-family: "Open Sans Semibold";
+            font-size: 15px;
+            margin-left: 18px;
+        }
+        .dvd-menu-opcio-professor {
+            flex-shrink: 1;
+            flex-basis: 107px;
+            height: 107px;
+            box-sizing: content-box;
+        }
+        .dvd-menu-opcio-professor-contingut {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dvd-menu-opcio-professor-seleccionat,
+        .dvd-menu-opcio-professor-seleccionat-tancat {
+            width: 100%;
+        }
+        .dvd-menu-opcio-filtre-rounded svg {
+            width: 35px;
+            height: 33px;
+        }
+
+        .dvd-menu-llibrealumne,
+        .dvd-menu-contentprofes {
+            height: calc(100vh - 121px);
+            overflow: hidden;
+            margin-bottom: 80px;
+        }
+        
+        #contentAlumnes,
+        #contentProfes {
+            width: 100%;
+            position: fixed;
+        }
+        
+        .dvd-menu-llibrealumne-contingut,
+        .dvd-menu-proposta-contingut {
+            width: 100%;
+        }
+        .dvd-menu-llibrealumne #contentAlumnescontingut {
+            height: 100%;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+        .dvd-menu-llibrealumne-filtratge {
+            margin: 25px 0px 20px 0px;
+            width: 100%;
+        }
+        #dvd-main-content {
+            margin-top: 74px;
+        }
+        footer {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1030;
+        }
+        #btn-show-menu {
+            display: block;
+        }
+         ::-webkit-scrollbar {
+            display: none;
+        }
+        #contentAlumnescontingut {
+            scrollbar-width: none;
+        }
+        #filtervideo {
+            width: 100%;
+            padding-left: 0px;
+        }
+        .dvd-contingut-principal {
+            min-height: calc(100vh - 121px);
+            padding: 0px;
+        }
+        .dvd-contingut-principal #content {
+            width: 100%;
+            height: 100%;
+        }
+        .dvd-menu-opcio-professor-seleccionat,
+        .dvd-menu-opcio-professor-seleccionat-tancat {
+            background-color: var(--color1);
+            flex-shrink: 1;
+            flex-basis: 107px;
+            height: 107px;
+            box-sizing: content-box;
+        }
+        .dvd-contingut-principal #mobileheadertext {
+            font-size: 17px;
+            width: 75%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .dvd-contingut-principal #content .imatgeArxiu {
+            margin-bottom: 37px;
+        }
+    }
+    
+    @media screen and (max-width:380px) {
+        .dvd-menu-opcio-professor-contingut {
+            justify-content: center;
+        }
+    }
+    
+    @media screen and (min-width:576px) {
+        .dvd-menu-opcio-professor-seleccionat:after {
+            display: block;
+        }
+    }
+    /* MODAL */
+    
+    .modal-dialog {
+        max-width: 600px;
+    }
+    
+    .modal-header {
+        background-color: var(--color1);
+        color: #FFF;
+        border-radius: 0px;
+        padding: 8px 9px 11px 28px;
+        border-bottom: 0px;
+    }
+    
+    .modal-header .close {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .modal-title {
+        font-family: "Open Sans Bold";
+        font-size: 18px;
+    }
+    
+    .vertical-alignment-helper {
+        display: table;
+        height: 100%;
+        max-width: 600px;
+        pointer-events: none;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .vertical-align-center {
+        /* To center vertically */
+        display: table-cell;
+        vertical-align: middle;
+        pointer-events: none;
+    }
+    
+    .modal-content {
+        border-radius: 0px;
+        border: 2px solid var(--color1);
+        /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+        width: inherit;
+        height: inherit;
+        /* To center horizontally */
+        margin: 0 auto;
+        pointer-events: all;
+    }
+    
+    .modal-body {
+        font-size: 13px;
+        margin: 20px 26px;
+        padding: 0px;
+    }
+    
+    #playerSection {
+        width: 100%;
+        /* height: 100%; */
+    }
+    
+    #player {
+        width: 100%;
+        height: 100%;
+    }

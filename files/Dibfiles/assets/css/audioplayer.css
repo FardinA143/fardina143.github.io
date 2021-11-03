@@ -1,0 +1,160 @@
+/* Classes que podrien estar ja definides */
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+.table-cell {
+    display: table-cell;
+}
+
+.align-middle {
+    vertical-align: middle;
+}
+
+
+/* reproductor musical */
+
+#music-player .music-player-content {
+    padding: 10px;
+    background-color: var(--color1);
+    margin: 0 auto;
+    width: 100%;
+    color: #FFF;
+}
+
+#music-player .music-player-text {
+    padding: 10px;
+    background-color: #4d4d4d;
+    margin: 0 auto;
+    width: 100%;
+    color: #FFF;
+    font-size: 10px;
+}
+
+#musical-note-icon.active #music-player {
+    display: block;
+}
+
+#music-player .time {
+    font-family: 'Open Sans';
+    font-weight: 200;
+    font-size: 20px;
+}
+
+#music-player .file-name {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    /*700;*/
+    font-size: 16px;
+}
+
+#music-player .copyright {
+    font-family: 'Open Sans';
+    font-weight: 200;
+    font-size: 16px;
+}
+
+#music-player .music-player-v {
+    position: absolute;
+    top: 7px;
+    right: 30px;
+    cursor: pointer;
+    height: 17px;
+}
+
+#music-player .music-player-v-mobile {
+    position: absolute;
+    top: 47px;
+    right: 8px;
+    cursor: pointer;
+    height: 33px;
+}
+
+#music-player .music-player-close {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    cursor: pointer;
+    height: 17px;
+}
+
+#music-player .music-player-close-mobile {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    cursor: pointer;
+    height: 33px;
+}
+
+#music-player .music-player-slider-container {
+    /* width: 173px;
+    padding-left: 10px;
+    padding-right: 10px; */
+}
+
+#music-player .music-player-info-container {
+    padding-left: 10px;
+    padding-right: 45px;
+}
+
+#music-player-slider.ui-widget.ui-widget-content {
+    border: 0;
+    background-color: var(--color2);
+    border-radius: 0;
+}
+
+#music-player-slider.ui-state-default,
+#music-player-slider.ui-widget-content .ui-state-default,
+#music-player-slider.ui-state-default,
+#music-player-slider .ui-button.ui-state-disabled:hover,
+#music-player-slider .ui-button.ui-state-disabled:active {
+    background-color: #F6F6F6;
+    border: 0;
+}
+
+#music-player-slider.ui-widget.ui-slider-horizontal {
+    height: 4px;
+}
+
+#music-player-slider.ui-slider .ui-slider-handle {
+    width: 5px;
+    height: 20px;
+    /* margin-left: 10px;
+    margin-right: 10px; */
+    top: -8px;
+    border-radius: 0;
+    position: absolute;
+}
+
+#music-player-stop,
+#music-player-play {
+    cursor: pointer;
+    height: 36px;
+}
+
+
+/* fin reproductor musical */
+
+
+/* Custom*/
+
+#music-player {
+    width: 100%;
+}
+
+#music-player .music-player-content {
+    align-content: center;
+    justify-content: space-between;
+}
+
+#music-player .music-player-grow {
+    flex-grow: 1;
+    /* margin: 0 10px; */
+    align-self: center;
+    height: 100%;
+    max-width: 80%;
+    position: relative;
+}
